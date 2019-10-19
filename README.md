@@ -8,7 +8,7 @@
 5. Open HTML file again, database now store in Google Chrome WebSQL.
 
 <b>Complete</b>
-1. Complete Fiding page
+1. Complete Fiding page (Searching.html)
   <br>1.1. Search products in stock by Name, ProductID, Catagory, Scale.
   <br>1.2. Order sorting. (0-9, A-Z)
   <br>1.3. Popup for description.
