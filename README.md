@@ -9,7 +9,7 @@
 
 <b>In progress</b>
 1. Complete Fiding page
-  <br>1.1 Search products in stock by Name, ProductID, Catagory, Scale.
-  <br>1.2 Order sorting. (0-9, A-Z)
-  <br>1.3 Popup for description.
-  <br>1.4 Add search product to cart.
+  1.1. Search products in stock by Name, ProductID, Catagory, Scale.
+  1.2. Order sorting. (0-9, A-Z)
+  1.3. Popup for description.
+  1.4. Add search product to cart.
