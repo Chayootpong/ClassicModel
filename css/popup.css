@@ -104,3 +104,32 @@ h1 {
         width: 70%;
     }
 }
+
+#myTable {
+    border-collapse: collapse;
+    width: 100%;
+    border: 1px solid #ddd;
+    font-size: 18px;
+}
+
+    #myTable th {
+        padding: 12px;
+        text-align: center;
+    }
+
+    #myTable td {
+        padding: 12px;
+    }
+
+    #myTable tr {
+        border-bottom: 1px solid #ddd;
+    }
+
+        #myTable tr.header,
+        #myTable tr:hover {
+            background-color: #f1f1f1;
+        }
+
+th {
+    cursor: pointer;
+}
