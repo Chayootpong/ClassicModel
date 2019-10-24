@@ -138,7 +138,7 @@ function showSearching() {
                 num = results.rows.item(i).quantityInStock
                 price = results.rows.item(i).buyPrice
                 des = results.rows.item(i).productDescription
-                list.innerHTML += `
+                node = `
                 <tr>
                     <td align="left"><a href="#popup`+ i + `"><img src="images/lambo.jpg" alt="" width="100" length="100"></a> &nbsp; &nbsp;<span id="nameRow` + i + `">` + pname + `</span></td>
                     <td id="codeRow`+ i + `" align="center">` + pcode + `</td>
@@ -161,6 +161,7 @@ function showSearching() {
                             <div align="left">` + "Price: " + "$" + price + `<div>
                         </div>
                 </div>`;
+                list.insertAdjacentHTML('beforeend', node)
             }
         }, null);
     });
