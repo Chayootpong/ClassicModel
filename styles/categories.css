@@ -60,10 +60,10 @@ ul
 p
 {
 	font-family: 'Open Sans', sans-serif;
-	font-size: 14px;
+	font-size: 25px;
 	line-height: 1.75;
 	font-weight: 400;
-	color: #8f8f8f;
+	color: #000000;
 	-webkit-font-smoothing: antialiased;
 	-webkit-text-shadow: rgba(0,0,0,.01) 0 0 1px;
 	text-shadow: rgba(0,0,0,.01) 0 0 1px;
@@ -671,7 +671,7 @@ section
 
 .header
 {
-	display: none;
+	
 	position: fixed;
 	top: 0;
 	left: 0;
@@ -762,7 +762,7 @@ section
 /* Hamburger */
 .hamburger
 {
-	display: none;
+	
 	margin-left: 50px;
 	cursor: pointer;
 	-webkit-transform: translateY(3px);
@@ -1311,21 +1311,37 @@ section
 	text-align: center;
 	z-index: 1;
 }
-.product.hot .product_tag
+.product.oneo .product_tag
 {
 	background: #bbe432;
 }
-.product.sale .product_tag
+.product.onetwo .product_tag
 {
 	background: #fd006b;
 }
-.product.new .product_tag
+.product.oneeight .product_tag
 {
 	background: #414141;
 }
-.product.cars .product_tag
+.product.twofour .product_tag
 {
 	background: #7b53c4;
+}
+.product.threetwo .product_tag
+{
+	background: #d62ba3;
+}
+.product.fiveo .product_tag
+{
+	background: #da811b;
+}
+.product.seventwo .product_tag
+{
+	background: #4dc4e9;
+}
+.product.sevenoo .product_tag
+{
+	background: #1faf73;
 }
 .product_content
 {
@@ -1379,9 +1395,30 @@ section
 	text-align: center;
 	margin-top: 22px;
 }
+.product_button_new {
+    width: 138px;
+    height: 45px;
+    background: #edf4f6;
+    text-align: center;
+    margin-top: 8px;
+}
+
+.product_button_red {
+    width: 138px;
+    height: 45px;
+    background: #edf4f6;
+    text-align: center;
+    margin-top: 8px;
+}
 .product_button:hover
 {
 	background: #bbe432;
+}
+.product_button_new:hover {
+    background: #bbe432;
+}
+.product_button_red:hover {
+    background: #ff413b;
 }
 .product_button a
 {
@@ -1391,6 +1428,22 @@ section
 	text-transform: uppercase;
 	color: #1a1a1a;
 	line-height: 45px;
+}
+.product_button_new a {
+    display: block;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #1a1a1a;
+    line-height: 45px;
+}
+.product_button_red a {
+    display: block;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #1a1a1a;
+    line-height: 45px;
 }
 
 /*********************************
