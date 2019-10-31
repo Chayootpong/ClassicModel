@@ -59,9 +59,9 @@ h1 {
 .popup {
     margin-left: 575px;
     margin-right: auto;
-    margin-top: 175px;
+    margin-top: 125px;
     margin-bottom: auto;
-    padding: 20px;
+    padding: 30px;
     background: #fff;
     border-radius: 5px;
     width: 50%;
@@ -70,9 +70,17 @@ h1 {
 }
 
     .popup h2 {
-        margin-top: 0;
+        margin-top: 7.5px;
+        margin-bottom: 30px;
         color: #333;
-        font-family: Tahoma, Arial, sans-serif;
+        font-family: poppins;
+    }
+
+    .popup h6 {
+        margin-top: 10px;
+        margin-bottom: 12.5px;
+        color: #333;
+        font-family: poppins;
     }
 
     .popup .close {
@@ -132,4 +140,116 @@ h1 {
 
 th {
     cursor: pointer;
+}
+
+[id^="nameP"], [id^="nameA"] {
+    width: 70%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+[id^="codeP"], [id^="codeA"] {
+    width: 25%;
+    padding: 12px 20px;
+    margin-top: 8px;
+    margin-left: 20px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+[id^="catalogP"], [id^="catalogA"] {
+    width: 27.5%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+[id^="scaleP"], [id^="scaleA"] {
+    width: 15%;
+    padding: 12px 20px;
+    margin-top: 8px;
+    margin-left: 20px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+[id^="vendorP"], [id^="vendorA"] {
+    width: 50%;
+    padding: 12px 20px;
+    margin-top: 8px;
+    margin-left: 20px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+[id^="desP"], [id^="desA"] {
+    width: 98%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+[id^="amountP"], [id^="amountA"] {
+    width: 20%;
+    padding: 12px 20px;
+    margin-top: 8px;
+    margin-left: 0px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+[id^="priceP"], [id^="priceA"] {
+    width: 20%;
+    padding: 12px 20px;
+    margin-top: 8px;
+    margin-left: 20px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+[id^="msrpP"], [id^="msrpA"] {
+    width: 20%;
+    padding: 12px 20px;
+    margin-top: 8px;
+    margin-left: 20px;
+    margin-right: 150px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type=submit] {
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    background-color: #45a049;
 }
