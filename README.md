@@ -13,3 +13,8 @@
   <br>1.2. Order sorting. (0-9, A-Z)
   <br>1.3. Popup for description.
   <br>1.4. Add search product to cart.
+  
+2. Complete Stocking page (Stocking.html)
+  <br>1.1. Can add product.
+  <br>1.2. Can edit product.
+  <br>1.3. Can delete product.
