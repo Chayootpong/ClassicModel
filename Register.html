@@ -258,12 +258,14 @@
                                 <form>
                                     <label><span>Customer Number</span><input type="text" name="customernumber"
                                             class="input-field" value=""></label>
-                                    <label><span>First Name</span><input type="text" name="firstname"
+                                    <label><span>Customer Name</span><input type="text" name="customername"
                                             class="input-field" value=""></label>
-                                    <label><span>Last Name</span><input type="text" name="lastname" class="input-field"
+                                    <label><span>Contact First Name</span><input type="text" name="firstname"
+                                            class="input-field" value=""></label>
+                                    <label><span>Contact Last Name</span><input type="text" name="lastname"
+                                            class="input-field" value=""></label>
+                                    <label><span>Phone</span><input type="text" name="phone" class="input-field"
                                             value=""></label>
-                                    <label><span>Phone</span><input type="tel" name="phone" class="input-field"
-                                            pattern="[0-9]{10}" value=""></label>
                                     <label><span>Address Line 1</span><input type="text" name="addressLine1"
                                             class="input-field" value=""></label>
                                     <label><span>Address Line 2</span><input type="text" name="addressLine2"
@@ -272,13 +274,16 @@
                                             value=""></label>
                                     <label><span>State</span><input type="text" name="state" class="input-field"
                                             value=""></label>
-                                    <label><span>Postal Code</span><input type="number" name="postalcode"
+                                    <label><span>Postal Code</span><input type="text" name="postalcode"
                                             class="input-field" value=""></label>
                                     <label><span>Country</span><input type="text" name="country" class="input-field"
                                             value=""></label>
-                                    <label><span>Credit Limit</span><input type="text" name="creditlimit"
+                                    <label><span>Employee Number</span><input type="number" name="emp_no"
                                             class="input-field" value=""></label>
-                                    <label><span> </span><input type="submit" value="Submit" /></label>
+                                    <label><span>Credit Limit</span><input type="number" name="creditlimit"
+                                            class="input-field" value=""></label>
+                                    <label><span> </span><input type="submit" value="Submit"
+                                            onclick="addCustomer()"></label>
                                 </form>
                             </div>
                         </div>

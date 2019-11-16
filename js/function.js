@@ -387,3 +387,39 @@ function showCatalog() {
 function test() {
     console.log("TEST!!!")
 }
+
+function addCustomer() {
+
+    var db = openDatabase('mydata', '1.0', 'Test DB', 2 * 1024 * 1024);
+
+    var cusno = document.getElementsByName('customernumber').value;
+    var cusname = document.getElementsByName('customername').value;
+    var fname = document.getElementsByName('firstname').value;
+    var lname = document.getElementsByName('lastname').value;
+    var phone = document.getElementsByName('phone').value;
+    var addr1 = document.getElementsByName('addressLine1').value;
+    var addr2 = document.getElementsByName('addressLine2').value;
+    var city = document.getElementsByName('city').value;
+    var state = document.getElementsByName('state').value;
+    var pc = document.getElementsByName('postalcode').value;
+    var coun = document.getElementsByName('country').value;
+    var empno = document.getElementsByName('emp_no').value;
+    var crlimit = document.getElementsByName('creditlimit').value;
+
+    /*console.log(name);
+    console.log(code);
+    console.log(catalog);
+    console.log(scale);
+    console.log(vendor);
+    console.log(des);
+    console.log(amount);
+    console.log(price);
+    console.log(msrp);*/
+
+    db.transaction(function (tx) {
+        var insert = 'INSERT INTO customers VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)';
+        tx.executeSql(insert, [cusno, cusname, fname, lname, phone, addr1, addr2, city, state, pc, coun, empno, crlimit]);
+    })
+
+    setTimeout(() => window.location.reload(), 600);
+}
