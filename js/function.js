@@ -142,7 +142,7 @@ function myFunction(value) {
 
 function myFunction2(value) {
     console.log(value)
-    var input, filter, p, div, div2,div3,ul2,span, i, txtValue, fill;
+    var input, filter, p, div, div2, i, txtValue, fill;
     count = 0;
     if (value == 'Name') fill = 1;
     else if (value == 'Code') fill = 2;
@@ -150,23 +150,19 @@ function myFunction2(value) {
     else if (value == 'Scale') fill = 4;
     else if (value == 'Vendor') fill = 5;
 
-    console.log(fill)
-    
-    input = document.getElementById('inpt_search1');
-    filter = input.value.toUpperCase();
-    div = document.getElementById("diva");
-    div2 = div.getElementsByTagName('div');
+    input = document.getElementById('inpt_search').value;
+    div2 = document.getElementById('SUS').childElementCount;
+
+    console.log(input)
     
     // Loop through all list items, and hide those who don't match the search query
-    for (i = 0; i < div2.length; i++) {
-        console.log(div2)
-        p = div2[i].getElementsByTagName("p")[fill];
-        txtValue = p.textContent || p.innerText;
-        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+    for (i = 0; i < div2.count; i++) {
+
+        /*if (txtValue.toUpperCase().indexOf(filter) > -1) {
             div2[i].style.display = "";
         } else {
             div2[i].style.display = "none";
-        }
+        }*/
     }
 }
 
@@ -384,37 +380,38 @@ function showCatalog() {
     });
 }
 
-function test() {
-    console.log("TEST!!!")
-}
-
 function addCustomer() {
 
+    console.log("SUS");
     var db = openDatabase('mydata', '1.0', 'Test DB', 2 * 1024 * 1024);
 
-    var cusno = document.getElementsByName('customernumber').value;
-    var cusname = document.getElementsByName('customername').value;
-    var fname = document.getElementsByName('firstname').value;
-    var lname = document.getElementsByName('lastname').value;
-    var phone = document.getElementsByName('phone').value;
-    var addr1 = document.getElementsByName('addressLine1').value;
-    var addr2 = document.getElementsByName('addressLine2').value;
-    var city = document.getElementsByName('city').value;
-    var state = document.getElementsByName('state').value;
-    var pc = document.getElementsByName('postalcode').value;
-    var coun = document.getElementsByName('country').value;
-    var empno = document.getElementsByName('emp_no').value;
-    var crlimit = document.getElementsByName('creditlimit').value;
+    var cusno = document.getElementById('customernumber').value;
+    var cusname = document.getElementById('customername').value;
+    var fname = document.getElementById('firstname').value;
+    var lname = document.getElementById('lastname').value;
+    var phone = document.getElementById('phone').value;
+    var addr1 = document.getElementById('addressLine1').value;
+    var addr2 = document.getElementById('addressLine2').value;
+    var city = document.getElementById('city').value;
+    var state = document.getElementById('state').value;
+    var pc = document.getElementById('postalcode').value;
+    var coun = document.getElementById('country').value;
+    var empno = document.getElementById('emp_no').value;
+    var crlimit = document.getElementById('creditlimit').value;
 
-    /*console.log(name);
-    console.log(code);
-    console.log(catalog);
-    console.log(scale);
-    console.log(vendor);
-    console.log(des);
-    console.log(amount);
-    console.log(price);
-    console.log(msrp);*/
+    console.log(cusno);
+    console.log(cusname);
+    console.log(fname);
+    console.log(lname);
+    console.log(phone);
+    console.log(addr1);
+    console.log(addr2);
+    console.log(city);
+    console.log(state);
+    console.log(pc);
+    console.log(coun);
+    console.log(empno);
+    console.log(crlimit);
 
     db.transaction(function (tx) {
         var insert = 'INSERT INTO customers VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)';
@@ -422,4 +419,8 @@ function addCustomer() {
     })
 
     setTimeout(() => window.location.reload(), 600);
+}
+
+function test() {
+    console.log("TEST!!!")
 }
