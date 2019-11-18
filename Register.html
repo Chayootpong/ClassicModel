@@ -117,8 +117,7 @@
             <div class="menu_search">
                 <form action="#" class="header_search_form menu_mm">
                     <input type="search" class="search_input menu_mm" placeholder="Search" required="required">
-                    <button
-                        class="header_search_button d-flex flex-column align-items-center justify-content-center menu_mm">
+                    <button class="header_search_button d-flex flex-column align-items-center justify-content-center menu_mm">
                         <i class="fa fa-search menu_mm" aria-hidden="true"></i>
                     </button>
                 </form>
@@ -171,13 +170,17 @@
                 </li>
 
                 <li>
-                    <a href=""> <img src="images/order status.png" alt="" width="30" length="30">&nbsp; &nbsp; Order
-                        Status</a>
+                    <a href="">
+                        <img src="images/order status.png" alt="" width="30" length="30">&nbsp; &nbsp; Order
+                        Status
+                    </a>
                 </li>
 
                 <li>
-                    <a href=""> <img src="images/membership.png" alt="" width="30" length="30">&nbsp; &nbsp;
-                        Membership</a>
+                    <a href="">
+                        <img src="images/membership.png" alt="" width="30" length="30">&nbsp; &nbsp;
+                        Membership
+                    </a>
                 </li>
 
                 <li class="active">
@@ -189,13 +192,17 @@
                 </li>
 
                 <li>
-                    <a href=""> <img src="images/promotion.png" alt="" width="30" length="30">&nbsp; &nbsp;
-                        Promotion</a>
+                    <a href="">
+                        <img src="images/promotion.png" alt="" width="30" length="30">&nbsp; &nbsp;
+                        Promotion
+                    </a>
                 </li>
 
                 <li>
-                    <a href=""> <img src="images/management.png" alt="" width="30" length="30">&nbsp; &nbsp;
-                        Management</a>
+                    <a href="">
+                        <img src="images/management.png" alt="" width="30" length="30">&nbsp; &nbsp;
+                        Management
+                    </a>
                 </li>
             </ul>
         </div>
@@ -212,15 +219,13 @@
                     <div class="container">
                         <div class="row">
                             <div class="col">
-                                <div
-                                    class="products_bar_content d-flex flex-column flex-xxl-row align-items-start align-items-xxl-center justify-content-start">
-                                    <div
-                                        class="products_bar_side ml-xxl-auto d-flex flex-row align-items-center justify-content-start">
+                                <div class="products_bar_content d-flex flex-column flex-xxl-row align-items-start align-items-xxl-center justify-content-start">
+                                    <div class="products_bar_side ml-xxl-auto d-flex flex-row align-items-center justify-content-start">
 
                                         <div class="products_dropdown text-right product_dropdown_filter">
                                             <div class="isotope_filter_text">
                                                 <span id="getFilter">Search by</span><i class="fa fa-caret-down"
-                                                    aria-hidden="true"></i>
+                                                                                        aria-hidden="true"></i>
                                             </div>
                                             <ul>
 
@@ -236,7 +241,7 @@
                                             <div class="cntr-innr">
                                                 <label class="search" for="inpt_search">
                                                     <input id="inpt_search" type="text"
-                                                        onkeyup="myFunction(document.getElementById('getFilter').innerText)" />
+                                                           onkeyup="myFunction(document.getElementById('getFilter').innerText)" />
                                                 </label>
                                             </div>
                                         </div>
@@ -256,34 +261,62 @@
                             <div class="form-style-2">
                                 <h2>Create New Member</h2>
                                 <form>
-                                    <label><span>Customer Number</span><input type="text" name="customernumber"
-                                            class="input-field" value=""></label>
-                                    <label><span>Customer Name</span><input type="text" name="customername"
-                                            class="input-field" value=""></label>
-                                    <label><span>Contact First Name</span><input type="text" name="firstname"
-                                            class="input-field" value=""></label>
-                                    <label><span>Contact Last Name</span><input type="text" name="lastname"
-                                            class="input-field" value=""></label>
-                                    <label><span>Phone</span><input type="text" name="phone" class="input-field"
-                                            value=""></label>
-                                    <label><span>Address Line 1</span><input type="text" name="addressLine1"
-                                            class="input-field" value=""></label>
-                                    <label><span>Address Line 2</span><input type="text" name="addressLine2"
-                                            class="input-field" value=""></label>
-                                    <label><span>City</span><input type="text" name="city" class="input-field"
-                                            value=""></label>
-                                    <label><span>State</span><input type="text" name="state" class="input-field"
-                                            value=""></label>
-                                    <label><span>Postal Code</span><input type="text" name="postalcode"
-                                            class="input-field" value=""></label>
-                                    <label><span>Country</span><input type="text" name="country" class="input-field"
-                                            value=""></label>
-                                    <label><span>Employee Number</span><input type="number" name="emp_no"
-                                            class="input-field" value=""></label>
-                                    <label><span>Credit Limit</span><input type="number" name="creditlimit"
-                                            class="input-field" value=""></label>
-                                    <label><span> </span><input type="submit" value="Submit"
-                                            onclick="addCustomer()"></label>
+                                    <label>
+                                        <span>Customer Number</span><input type="text" id="customernumber"
+                                                                           class="input-field" value="">
+                                    </label>
+                                    <label>
+                                        <span>Customer Name</span><input type="text" id="customername"
+                                                                         class="input-field" value="">
+                                    </label>
+                                    <label>
+                                        <span>Contact First Name</span><input type="text" id="firstname"
+                                                                              class="input-field" value="">
+                                    </label>
+                                    <label>
+                                        <span>Contact Last Name</span><input type="text" id="lastname"
+                                                                             class="input-field" value="">
+                                    </label>
+                                    <label>
+                                        <span>Phone</span><input type="text" id="phone" class="input-field"
+                                                                 value="">
+                                    </label>
+                                    <label>
+                                        <span>Address Line 1</span><input type="text" id="addressLine1"
+                                                                          class="input-field" value="">
+                                    </label>
+                                    <label>
+                                        <span>Address Line 2</span><input type="text" id="addressLine2"
+                                                                          class="input-field" value="">
+                                    </label>
+                                    <label>
+                                        <span>City</span><input type="text" id="city" class="input-field"
+                                                                value="">
+                                    </label>
+                                    <label>
+                                        <span>State</span><input type="text" id="state" class="input-field"
+                                                                 value="">
+                                    </label>
+                                    <label>
+                                        <span>Postal Code</span><input type="text" id="postalcode"
+                                                                       class="input-field" value="">
+                                    </label>
+                                    <label>
+                                        <span>Country</span><input type="text" id="country" class="input-field"
+                                                                   value="">
+                                    </label>
+                                    <label>
+                                        <span>Employee Number</span><input type="number" id="emp_no"
+                                                                           class="input-field" value="">
+                                    </label>
+                                    <label>
+                                        <span>Credit Limit</span><input type="number" id="creditlimit"
+                                                                        class="input-field" value="">
+                                    </label>
+                                    <label>
+                                        <span> </span><input type="button" value="Submit"
+                                                             onclick="addCustomer()">
+                                    </label>
                                 </form>
                             </div>
                         </div>
@@ -292,6 +325,10 @@
             </div>
         </div>
     </div>
+
+    <script>
+        var db = openDatabase('mydata', '1.0', 'Test DB', 2 * 1024 * 1024);
+    </script >
 
     <script src="js/jquery-3.2.1.min.js"></script>
     <script src="styles/bootstrap-4.1.3/popper.js"></script>
