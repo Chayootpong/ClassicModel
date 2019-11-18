@@ -20,21 +20,25 @@ $(document).ready(function()
 	1. Vars and Inits
 
 	*/
-
 	var menu = $('.menu');
 	var burger = $('.hamburger');
 	var menuActive = false;
 
 	$(window).on('resize', function()
-	{
+    {
 		setTimeout(function()
-		{
+        {
 			$(window).trigger('resize.px.parallax');
 		}, 375);
-	});
+    });
 
 	initMenu();
-	initIsotope();
+    initIsotope();
+
+    //This func use to reposition the items
+    $(window).on('click', function () { // if there is a click on somewhere in the page, it's will move all the item sort <--- Try fixing the condition here
+        initIsotope(); //call the func that use to reposition
+    });
 
 	/* 
 
@@ -43,7 +47,7 @@ $(document).ready(function()
 	*/
 
 	function initMenu()
-	{
+    {
 		if(menu.length)
 		{
 			if($('.hamburger').length)
@@ -95,13 +99,14 @@ $(document).ready(function()
 
     function initIsotope()
     {
+
     	var sortingButtons = $('.item_sorting_btn');
 
     	if($('.grid').length)
     	{
     		var grid = $('.grid').isotope({
-	  			itemSelector: '.grid-item',
-	  			percentPosition: true,
+                itemSelector: '.grid-item',
+                percentPosition: true,
 	  			masonry:
 	  			{
 				    horizontalOrder: true
