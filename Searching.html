@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -17,6 +17,7 @@
     <link rel="stylesheet" type="text/css" href="styles/search_bar.css">
     <link rel="stylesheet" type="text/css" href="styles/side_bar.css">
     <link rel="stylesheet" type="text/css" href="css/popup.css">
+    <link rel="stylesheet" type="text/css" href="styles/logout_button.css">
 </head>
 
 <body>
@@ -203,6 +204,18 @@
             <div class="products_bar">
                 <div class="section_container">
                     <div class="container">
+
+                        <!-- Logout Dropdown -->
+                        <div class="logout_dropdown pull-right">
+                                <button class="btn logout_button dropdown-toggle" type="button" id="logout_dropdownMenuButton"
+                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Welcome!
+                                </button>
+                                <div class="logout_dropdown dropdown-menu" aria-labelledby="logout_dropdownMenuButton">
+                                    <a class="dropdown-item" onclick="logout()">Logout</a>
+                                </div>
+                            </div>
+
                         <div class="row">
                             <div class="col">
                                 <div class="products_bar_content d-flex flex-column flex-xxl-row align-items-start align-items-xxl-center justify-content-start">
@@ -277,6 +290,7 @@
     <script src="js/categories.js"></script>
     <script src="js/function.js"></script>
     <script src="js/search_bar.js"></script>
+    <script src="js/logout.js"></script>
 </body>
 
 </html>
