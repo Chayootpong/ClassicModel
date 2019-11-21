@@ -1,0 +1,386 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Classic Model Shop</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="aStar Fashion Template Project">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="styles/bootstrap-4.1.3/bootstrap.css">
+    <link href="plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/owl.carousel.css">
+    <link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/owl.theme.default.css">
+    <link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/animate.css">
+    <link rel="stylesheet" type="text/css" href="styles/categories.css">
+
+    <link rel="stylesheet" type="text/css" href="styles/search_bar.css">
+    <link rel="stylesheet" type="text/css" href="styles/side_bar.css">
+    <link rel="stylesheet" type="text/css" href="css/popup2.css">
+
+    <link rel="stylesheet" type="text/css" href="tableCSS/css/util.css">
+    <link rel="stylesheet" type="text/css" href="tableCSS/css/main.css">
+
+    <link rel="icon" href="https://icon-library.net/images/3d-model-icon/3d-model-icon-24.jpg" type="image/x-icon" />
+
+</head>
+
+<body>
+
+    <div class="super_container">
+
+        <!-- Menu -->
+
+        <div class="menu d-flex flex-column align-items-start justify-content-start menu_mm trans_400">
+            <div class="menu_close_container">
+                <div class="menu_close">
+                    <div></div>
+                    <div></div>
+                </div>
+            </div>
+            <div class="menu_top d-flex flex-row align-items-center justify-content-start">
+
+                <!-- Language -->
+                <div class="info_languages has_children">
+                    <div class="language_flag">
+                        <img src="images/flag_1.svg" alt="https://www.flaticon.com/authors/freepik">
+                    </div>
+                    <div class="dropdown_text">english</div>
+                    <div class="dropdown_arrow"><i class="fa fa-angle-down" aria-hidden="true"></i></div>
+
+                    <!-- Language Dropdown Menu -->
+                    <ul>
+                        <li>
+                            <a href="#">
+                                <div class="language_flag">
+                                    <img src="images/flag_2.svg" alt="https://www.flaticon.com/authors/freepik">
+                                </div>
+                                <div class="dropdown_text">french</div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <div class="language_flag">
+                                    <img src="images/flag_3.svg" alt="https://www.flaticon.com/authors/freepik">
+                                </div>
+                                <div class="dropdown_text">japanese</div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <div class="language_flag">
+                                    <img src="images/flag_4.svg" alt="https://www.flaticon.com/authors/freepik">
+                                </div>
+                                <div class="dropdown_text">russian</div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <div class="language_flag">
+                                    <img src="images/flag_5.svg" alt="https://www.flaticon.com/authors/freepik">
+                                </div>
+                                <div class="dropdown_text">spanish</div>
+                            </a>
+                        </li>
+                    </ul>
+
+                </div>
+
+                <!-- Currency -->
+                <div class="info_currencies has_children">
+                    <div class="dropdown_text">usd</div>
+                    <div class="dropdown_arrow"><i class="fa fa-angle-down" aria-hidden="true"></i></div>
+
+                    <!-- Currencies Dropdown Menu -->
+                    <ul>
+                        <li>
+                            <a href="#">
+                                <div class="dropdown_text">EUR</div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <div class="dropdown_text">YEN</div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <div class="dropdown_text">GBP</div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <div class="dropdown_text">CAD</div>
+                            </a>
+                        </li>
+                    </ul>
+
+                </div>
+
+            </div>
+            <div class="menu_search">
+                <form action="#" class="header_search_form menu_mm">
+                    <input type="search" class="search_input menu_mm" placeholder="Search" required="required">
+                    <button class="header_search_button d-flex flex-column align-items-center justify-content-center menu_mm">
+                        <i class="fa fa-search menu_mm" aria-hidden="true"></i>
+                    </button>
+                </form>
+            </div>
+            <nav class="menu_nav">
+                <ul class="menu_mm">
+                    <li class="menu_mm"><a href="index.html">home</a></li>
+                    <li class="menu_mm"><a href="categories.html">catalog</a></li>
+                    <li class="menu_mm"><a href="customer.html">membership</a></li>
+                    <li class="menu_mm"><a href="#">order status</a></li>
+                    <li class="menu_mm"><a href="blog.html">blog</a></li>
+                    <li class="menu_mm"><a href="contact.html">contact</a></li>
+                </ul>
+            </nav>
+            <div class="menu_extra">
+                <div class="menu_social">
+                    <ul>
+                        <li><a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
+                        <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                        <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                        <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sidebar -->
+
+        <div class="sidebar">
+
+            <!-- Logo -->
+            <div class="sidebar_logo">
+                <img src="images/Logo.png" alt="" width="200" length="200">
+            </div>
+
+            <ul class="list-unstyled components">
+                <li>
+                    <a href="Finding.html"> <img src="images/fiding.png" alt="" width="30" length="30">&nbsp; &nbsp; Finding </a>
+
+                </li>
+
+                <li>
+                    <a href=""> <img src="images/cart.png" alt="" width="30" length="30">&nbsp; &nbsp; Cart</a>
+                </li>
+
+                <li>
+                    <a href=""> <img src="images/payment.png" alt="" width="30" length="30">&nbsp; &nbsp; Payment</a>
+                </li>
+
+                <li>
+                    <a href=""> <img src="images/order status.png" alt="" width="30" length="30">&nbsp; &nbsp; Order Status</a>
+                </li>
+
+                <li class="active">
+                    <a href="#"> <img src="images/membership.png" alt="" width="30" length="30">&nbsp; &nbsp; Membership</a>
+                </li>
+
+                <li>
+                    <a href="Register.html"> <img src="images/register.png" alt="" width="30" length="30">&nbsp; &nbsp; Register</a>
+                </li>
+
+                <li>
+                    <a href="Stocking.html"> <img src="images/stocking.png" alt="" width="30" length="30">&nbsp; &nbsp; Stocking</a>
+                </li>
+
+                <li>
+                    <a href="Promotion.html"> <img src="images/promotion.png" alt="" width="30" length="30">&nbsp; &nbsp; Promotion</a>
+                </li>
+
+                <li>
+                    <a href="Management.html"> <img src="images/management.png" alt="" width="30" length="30">&nbsp; &nbsp; Management</a>
+                </li>
+            </ul>
+        </div>
+
+
+
+        <!-- Products -->
+
+        <div class="products">
+
+            <!-- Sorting & Filtering -->
+            <div class="products_bar">
+                <div class="section_container">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col">
+                                <div class="products_bar_content d-flex flex-column flex-xxl-row align-items-start align-items-xxl-center justify-content-start">
+
+                                    <div class="products_bar_side ml-xxl-auto d-flex flex-row align-items-center justify-content-start">
+
+                                        <div class="products_dropdown text-right product_dropdown_filter">
+                                            <div class="isotope_filter_text">
+                                                <span id="getFilter">Search by</span><i class="fa fa-caret-down" aria-hidden="true"></i>
+                                            </div>
+                                            <ul>
+
+                                                <li class="item_filter_btn">Shop</li>
+                                                <li class="item_filter_btn">Name</li>
+
+
+
+                                            </ul>
+                                        </div>
+
+                                        <div class="cntr">
+                                            <div class="cntr-innr">
+                                                <label class="search" for="inpt_search">
+                                                    <input id="inpt_search" type="text" onkeyup="myFunction(document.getElementById('getFilter').innerText)" />
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section_container">
+                <div class="container">
+                    <div class="row">
+                        <div class="col">
+                            <div class="products_container grid" id="diva"></div>
+                            <script>
+                                var db = openDatabase('mydata', '1.0', 'Test DB', 2 * 1024 * 1024);
+                                let msg = "";
+
+                                db.transaction(function (tx) {
+                                    tx.executeSql('SELECT * FROM customers ', [], function (tx, results) {
+
+                                        var len = results.rows.length, i;
+                                        const list = document.querySelector('#diva');
+                                        for (i = 0; i < len; i++) {
+                                            msg = results.rows.item(i).customerName
+                                            msg2 = results.rows.item(i).contactLastName
+                                            msg3 = results.rows.item(i).contactFirstName
+                                            msg4 = results.rows.item(i).phone
+                                            node = `
+                                                                            <divx class="product grid-item sale" id="bigMember`+ i + `">
+                                                                            <div class="product_inner" id="inner` + i + `">
+                                                                                <div class="product_image">
+                                                                                    <img src="images/lambo.jpg" alt="">
+                                                                                </div>
+                                                                                <div class="product_content text-center">
+                                                                                    <div class="text_box">
+                                                                                        <div class="product_title" id="XXXX" ><a href="product.html"><span id="shopM`+ i + `">` + msg + `</span></a></div>
+                                                                                    </div>
+                                                                                    <div>
+                                                                                        <ul align='left'>
+                                                                                            <li><span>Contact Name: </span><span id="nameM`+ i + `">` + msg2 + ` ` + msg3 + `</span></li>
+                                                                                            <li><span>Phone: </span><span id="phoneM`+ i + `">` + msg4 + `</span></li>
+                                                                                        </ul>
+                                                                                    </div>
+                                                                                    <div class="product_button ml-auto mr-auto trans_200" style="display: inline-block"><a href="#update`+ i + `">set in order</a></div>
+                                                                                    <div class="product_button ml-auto mr-auto trans_200" style="display: inline-block" onclick="showHistory(document.getElementById('shopM`+ i + `').innerHTML)"><a href="#">history</a></div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>`;
+                                            list.insertAdjacentHTML('afterbegin', node)
+                                        }
+                                    }, null);
+                                });
+                            </script>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="addProduct" class="overlay">
+        <div class="popup">
+            <h2>Add Product</h2>
+            <a class="close" href="#">&times;</a>
+            <h6>
+                Product Name
+                &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+                &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&ensp;&nbsp;
+                Code
+            </h6>
+            <input type="text" id="nameA"> <input type="text" id="codeA">
+            <h6>
+                Catalog
+                &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;
+                Scale
+                &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&ensp;&nbsp;
+                Vendor
+            </h6>
+            <select id="catalogA">
+                <option selected disabled hidden>Choose...</option>
+                <option value="Classic Cars">Classic Cars</option>
+                <option value="Motorcycles">Motorcycles</option>
+                <option value="Planes">Planes</option>
+                <option value="Ships">Ships</option>
+                <option value="Trains">Trains</option>
+                <option value="Trucks and Buses">Trucks and Buses</option>
+                <option value="Vintage Cars">Vintage Cars</option>
+            </select>
+            <select id="scaleA">
+                <option selected disabled hidden>Choose...</option>
+                <option value="1:10">1:10</option>
+                <option value="1:12">1:12</option>
+                <option value="1:18">1:18</option>
+                <option value="1:24">1:24</option>
+                <option value="1:32">1:32</option>
+                <option value="1:50">1:50</option>
+                <option value="1:72">1:72</option>
+                <option value="1:700">1:700</option>
+            </select>
+            <select id="vendorA">
+                <option selected disabled hidden>Choose...</option>
+                <option value="Autoart Studio Design">Autoart Studio Design</option>
+                <option value="Carousel DieCast Legends">Carousel DieCast Legends</option>
+                <option value="Classic Metal Creations">Classic Metal Creations</option>
+                <option value="Exoto Designs">Exoto Designs</option>
+                <option value="Gearbox Collectibles">Gearbox Collectibles</option>
+                <option value="Highway 66 Mini Classics">Highway 66 Mini Classics</option>
+                <option value="Min Lin Diecast">Min Lin Diecast</option>
+                <option value="Motor City Art Classics">Motor City Art Classics</option>
+                <option value="Red Start Diecast">Red Start Diecast</option>
+                <option value="Second Gear Diecast">Second Gear Diecast</option>
+                <option value="Studio M Art Models">Studio M Art Models</option>
+                <option value="Unimax Art Galleries">Unimax Art Galleries</option>
+                <option value="Welly Diecast Productions">Welly Diecast Productions</option>
+            </select>
+            <h6>Description</h6> <textarea id="desA" rows=7 type="text"></textarea>
+            <h6>
+                Quantity&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+                Price&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+                MSRP
+            </h6>
+            <input type="number" min=0 id="amountA">
+            <input type="number" min=0 id="priceA">
+            <input type="number" min=0 id="msrpA">
+            <div class="product_button_new ml-auto mr-auto trans_200" style="display: inline-block" onclick="addProduct()">
+                <a href="#">Add</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="styles/bootstrap-4.1.3/popper.js"></script>
+    <script src="styles/bootstrap-4.1.3/bootstrap.min.js"></script>
+    <script src="plugins/greensock/TweenMax.min.js"></script>
+    <script src="plugins/greensock/TimelineMax.min.js"></script>
+    <script src="plugins/scrollmagic/ScrollMagic.min.js"></script>
+    <script src="plugins/greensock/animation.gsap.min.js"></script>
+    <script src="plugins/greensock/ScrollToPlugin.min.js"></script>
+    <script src="plugins/OwlCarousel2-2.2.1/owl.carousel.js"></script>
+    <script src="plugins/easing/easing.js"></script>
+    <script src="plugins/parallax-js-master/parallax.min.js"></script>
+    <script src="plugins/Isotope/isotope.pkgd.min.js"></script>
+    <script src="plugins/Isotope/fitcolumns.js"></script>
+    <script src="js/categories.js"></script>
+    <script src="js/function.js"></script>
+    <script src="js/search_bar.js"></script>
+    <script src="tableCSS/js/main.js"></script>
+</body>
+
+</html>
