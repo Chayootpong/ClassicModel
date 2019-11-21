@@ -111,59 +111,163 @@ function deleteProduct(id) {
     setTimeout(() => window.location.reload(), 600);
 }
 
-function myFunction(value) {
-    console.log(value)
-    var input, filter, table, tr, td, i, txtValue, fill
-    count = 0;
-    if (value == 'Name') fill = 0;
-    else if (value.substring(0, value.length - 1) == 'Code') fill = 1;
-    else if (value == 'Category') fill = 2;
-    else if (value == 'Scale') fill = 3;
+function showHistory(name) {
 
-    console.log(fill)
-    input = document.getElementById("inpt_search");
-    filter = input.value.toUpperCase();
-    table = document.getElementById("myTable");
-    tr = table.getElementsByTagName("tr");
-    for (i = 0; i < tr.length; i++) {
-        td = tr[i].getElementsByTagName("td")[fill];
-        if (td) {
-            txtValue = td.textContent || td.innerText;
-            if (txtValue.toUpperCase().indexOf(filter) > -1) {
-                tr[i].style.display = "";
-                count++;
-            } else {
-                tr[i].style.display = "none";
+    var db = openDatabase('mydata', '1.0', 'Test DB', 2 * 1024 * 1024);
+
+    db.transaction(function (tx) {
+        tx.executeSql('SELECT OD.orderNumber, OD.productCode, OD.quantityOrdered, OD.priceEach, O.orderDate, O.requiredDate, O.shippedDate, O.status FROM orders O, orderdetails OD, customers CT WHERE O.customerNumber = CT.customerNumber AND CT.customerName = "' + name + '" AND O.orderNumber = OD.orderNumber', [], function (tx, results) {
+            const list = document.querySelector('#diva');
+            node = `<div id="history` + name + `" class="overlay">
+                    <div class="popup">
+                    <h2>History</h2>
+                    <h4>Result: ` + results.rows.length + ` item(s) </h4>
+                        <a class="close" href="#">&times;</a>
+                    <div class="limiter">
+				            <div class="table100 ver1">					            
+					            <div class="wrap-table100-nextcols js-pscroll">
+						            <div class="table100-nextcols">
+							            <table>
+								            <thead>
+									            <tr class="row100 head">
+                                                    <th class="cell100 column1">NO.</th>
+										            <th class="cell100 column2">Order NO.</th>
+										            <th class="cell100 column3">Product Code</th>
+										            <th class="cell100 column4">Amount</th>
+										            <th class="cell100 column5">Price</th>
+										            <th class="cell100 column6">Total</th>
+                                                    <th class="cell100 column7">Order Date</th>
+                                                    <th class="cell100 column8">Required Date</th>
+                                                    <th class="cell100 column9">Shipped Date</th>
+                                                    <th class="cell100 column10">Status</th>
+									            </tr>
+								            </thead>
+								            <tbody>`;
+
+            for (var i = 0; i < results.rows.length; i++) {
+                
+                node += `             
+				<tr class="row100 body">
+                    <td class="cell100 column1">`+ (i + 1) + `</td>
+					<td class="cell100 column2">` + results.rows.item(i).orderNumber + `</td>
+					<td class="cell100 column3">` + results.rows.item(i).productCode + `</td>
+					<td class="cell100 column4">` + results.rows.item(i).quantityOrdered + `</td>
+					<td class="cell100 column5">` + results.rows.item(i).priceEach + ` $</td>
+					<td class="cell100 column6">` + (results.rows.item(i).quantityOrdered * results.rows.item(i).priceEach).toFixed(2) + ` $<br>(+` + Math.floor((results.rows.item(i).quantityOrdered * results.rows.item(i).priceEach) / 100).toFixed(0) * 3 + ` pts.)</br></td>
+					<td class="cell100 column7">` + results.rows.item(i).orderDate + `</td>
+					<td class="cell100 column8">` + results.rows.item(i).requiredDate + `</td>
+					<td class="cell100 column9">` + results.rows.item(i).shippedDate + `</td>
+					<td class="cell100 column10">` + results.rows.item(i).status + `</td>
+				</tr>`;                                                                                                                                                                                                                                                                                              
             }
-        }
-    }
-    console.log(count);
+
+            node += `</tbody>
+							  </table>
+				            </div>
+			            </div>
+		            </div>
+	            </div>
+                    </div>
+                </div>`;
+
+            list.insertAdjacentHTML('afterbegin', node)
+
+        }, null);
+    });
+    
+    setTimeout(function () { window.location = '#history' + name }, 100);
+}
+
+function myFunction(value) {
+
+    if (value == 'Shop') fill = 1;
+    else if (value == 'Name') fill = 2;
+
+    var input = document.getElementById('inpt_search').value.toUpperCase();
+
+    var db = openDatabase('mydata', '1.0', 'Test DB', 2 * 1024 * 1024);
+
+    console.log(input);
+    //console.log(document.getElementById("shopM1").innerHTML.toUpperCase());
+
+    db.transaction(function (tx) {
+        tx.executeSql('SELECT * FROM customers', [], function (tx, results) {
+
+            var count = results.rows.length;
+
+            for (var i = 0; i < count; i++) {
+
+                if (fill == 1 && document.getElementById("shopM" + i).innerHTML.toUpperCase().indexOf(input) > -1) document.getElementById("inner" + i).style.display = "";
+                else if (fill == 2 && document.getElementById("nameM" + i).innerHTML.toUpperCase().indexOf(input) > -1) document.getElementById("inner" + i).style.display = "";
+                else document.getElementById("inner" + i).style.display  = "none";
+            }
+
+        }, null);
+    });
 }
 
 function myFunction2(value) {
-    console.log(value)
-    var input, filter, p, div, div2, i, txtValue, fill;
-    count = 0;
+
     if (value == 'Name') fill = 1;
     else if (value == 'Code') fill = 2;
     else if (value == 'Category') fill = 3;
     else if (value == 'Scale') fill = 4;
     else if (value == 'Vendor') fill = 5;
 
-    input = document.getElementById('inpt_search').value;
-    div2 = document.getElementById('SUS').childElementCount;
+    var input = document.getElementById('inpt_search').value.toUpperCase();
 
-    console.log(input)
-    
-    // Loop through all list items, and hide those who don't match the search query
-    for (i = 0; i < div2.count; i++) {
+    var db = openDatabase('mydata', '1.0', 'Test DB', 2 * 1024 * 1024);
 
-        /*if (txtValue.toUpperCase().indexOf(filter) > -1) {
-            div2[i].style.display = "";
-        } else {
-            div2[i].style.display = "none";
-        }*/
-    }
+    db.transaction(function (tx) {
+        tx.executeSql('SELECT * FROM products', [], function (tx, results) {
+
+            var count = results.rows.length;
+
+            for (var i = 0; i < count; i++) {
+
+                if (fill == 1 && document.getElementById("nameP" + i).value.toUpperCase().indexOf(input) > -1) document.getElementById("inner" + i).style.display = "";
+                else if (fill == 2 && document.getElementById("codeP" + i).value.toUpperCase().indexOf(input) > -1) document.getElementById("inner" + i).style.display = "";
+                else if (fill == 3 && document.getElementById("catt" + i).innerHTML.toUpperCase().indexOf(input) > -1) document.getElementById("inner" + i).style.display = "";
+                else if (fill == 4 && document.getElementById("sc" + i).innerHTML.toUpperCase() == input) document.getElementById("inner" + i).style.display = "";
+                else if (fill == 5 && document.getElementById("vendorP" + i).value.toUpperCase().indexOf(input) > -1) document.getElementById("inner" + i).style.display = "";
+                else document.getElementById("inner" + i).style.display = "none";
+            }
+
+        }, null);
+    });
+}
+
+function myFunction3(value) {
+
+    if (value == 'Name') fill = 1;
+    else if (value == 'Code') fill = 2;
+    else if (value == 'Category') fill = 3;
+    else if (value == 'Scale') fill = 4;
+    else if (value == 'Vendor') fill = 5;
+
+    var input = document.getElementById('inpt_search').value.toUpperCase();
+
+    console.log(document.getElementById("nameOP1"))
+
+    var db = openDatabase('mydata', '1.0', 'Test DB', 2 * 1024 * 1024);
+
+    db.transaction(function (tx) {
+        tx.executeSql('SELECT * FROM products', [], function (tx, results) {
+
+            var count = results.rows.length;
+
+            for (var i = 0; i < count; i++) {
+
+                if (fill == 1 && document.getElementById("nameOP" + i).innerHTML.toUpperCase().indexOf(input) > -1) document.getElementById("inner" + i).style.display = "";
+                else if (fill == 2 && document.getElementById("codeOP" + i).innerHTML.toUpperCase().indexOf(input) > -1) document.getElementById("inner" + i).style.display = "";
+                else if (fill == 3 && document.getElementById("catt" + i).innerHTML.toUpperCase().indexOf(input) > -1) document.getElementById("inner" + i).style.display = "";
+                else if (fill == 4 && document.getElementById("sc" + i).innerHTML.toUpperCase() == input) document.getElementById("inner" + i).style.display = "";
+                else if (fill == 5 && document.getElementById("vendorP" + i).value.toUpperCase().indexOf(input) > -1) document.getElementById("inner" + i).style.display = "";
+                else document.getElementById("inner" + i).style.display = "none";
+            }
+
+        }, null);
+    });
 }
 
 function sortTable(n) {
@@ -249,16 +353,8 @@ function showSearching() {
                 num = results.rows.item(i).quantityInStock
                 price = results.rows.item(i).buyPrice
                 des = results.rows.item(i).productDescription
+                const list = document.querySelector('#diva');
                 node = `
-                <tr>
-                    <td align="left"><a href="#popup`+ i + `"><img src="images/lambo.jpg" alt="" width="100" length="100"></a> &nbsp; &nbsp;<span id="nameRow` + i + `">` + pname + `</span></td>
-                    <td id="codeRow`+ i + `" align="center">` + pcode + `</td>
-                    <td id="catRow`+ i + `" align="center">` + pcat + `</td>
-                    <td id="scaleRow`+ i + `" align="center">` + pscale + `</td>
-                    <td id="numRow`+ i + `" align="center">` + num + `</td>
-                    <td id="priceRow`+ i + `"  align="center">` + "$" + price + `</td>
-                    <td> <div class="product_button ml-auto mr-auto" id="`+ i + `" onclick="log(this.id)"><a href="#">Add to Cart<a></div></button></td>
-                </tr>
                 <div id="popup`+ i + `" class="overlay">
                     <div class="popup">
                     <h2>Product Info</h2>
@@ -341,39 +437,32 @@ function showCatalog() {
                 console.log(msg4);
                 console.log(vendor_fill);
                 list.innerHTML += `
-                                                <div class="product grid-item`+ " " + scale + " " + vendor_fill + `">
-                                                    <div class="product_inner">
-                                                    
-                                                        <div class="product_image">
-                                                            <img src="images/lambo.jpg" alt="">
-                                                                
-                                                            
-                                                                <div class="product_tag">` + msg4 + `</div>
-                                                            </div>
-                                                            <div class="product_content text-center">
-                                                                <div class="text_box">
-                                                                    <div class="product_title" id="XXXX" ><a href="product.html">` + msg + `</a></div>
-                                                            </div>
-                                                            <div>
-                                                            <ul align='left' >
-                                                                <li><span>Code: </span> 
-                                                                ` + msg2 + ` </li>
-                                                                <li><span>Category: </span> 
-                                                                ` + msg3 + ` </li>
-                                                                <li><span>Vendor: </span> 
-                                                                ` + vendor + ` </li>
-                                                                <li class="product_price"> 
-                                                               $`  + price + ` </li>
-                                                            
-                                                            </ul>
-                                                            
-                                                            </div>
-                        
-            
-                        
-                                                        </div>
-                                                    </div>
-                                                </div>`;
+                <div class="product grid-item`+ " " + scale + " " + vendor_fill + `">
+                    <div class="product_inner">                    
+                        <div class="product_image">
+                            <img src="images/lambo.jpg" alt="">                                                          
+                                <div class="product_tag">` + msg4 + `</div>
+                            </div>
+                            <div class="product_content text-center">
+                                <div class="text_box">
+                                    <div class="product_title" id="XXXX" ><a href="product.html">` + msg + `</a></div>
+                            </div>
+                            <div>
+                            <ul align='left' >
+                                <li><span>Code: </span> 
+                                ` + msg2 + ` </li>
+                                <li><span>Category: </span> 
+                                ` + msg3 + ` </li>
+                                <li><span>Vendor: </span> 
+                                ` + vendor + ` </li>
+                                <li class="product_price"> 
+                                $`  + price + ` </li>
+                            
+                            </ul>                            
+                            </div>
+                        </div>
+                    </div>
+                </div>`;
             }
 
         }, null);
@@ -420,6 +509,465 @@ function addCustomer() {
 
     setTimeout(() => window.location.reload(), 600);
 }
+
+function addPromotion() {
+
+    var db = openDatabase('mydata', '1.0', 'Test DB', 2 * 1024 * 1024);
+
+    var code = document.getElementById('pcode').value;
+    var name = document.getElementById('pname').value;
+    var discount = document.getElementById('pdis').value;
+    var start_date = document.getElementById('psd').value;
+    var end_date = document.getElementById('ped').value;
+    console.log(code);
+    console.log(name);
+    console.log(start_date);
+    console.log(end_date);
+    db.transaction(function (tx) {
+
+        var insert = "INSERT INTO promotions (name, code, discount, startDate, endDate) VALUES (?,?,?,?,?)";
+        tx.executeSql('CREATE TABLE IF NOT EXISTS promotions (name, code UNIQUE, discount, startDate, endDate)');
+        tx.executeSql(insert, [name, code, discount, start_date, end_date]);
+
+    })
+    setTimeout(() => window.location.reload(), 600);
+}
+
+
+function deletePromotion(id) {
+
+    var db = openDatabase('mydata', '1.0', 'Test DB', 2 * 1024 * 1024);
+
+    db.transaction(function (tx) {
+        var del = 'DELETE FROM promotions WHERE code = ?';
+        var number = document.getElementById('oldcode' + id).innerHTML;
+        tx.executeSql(del, [number]);
+    })
+
+    setTimeout(() => window.location.reload(), 600);
+}
+
+function myFunctionPro(value) {
+    console.log(value)
+    var input, filter, table, tr, td, i, txtValue, fill
+    count = 0;
+    if (value == 'Name') fill = 1;
+    else if (value == 'Code') fill = 0;
+
+
+    console.log(fill)
+    input = document.getElementById("inpt_search");
+    filter = input.value.toUpperCase();
+    table = document.getElementById("myTable");
+    tr = table.getElementsByTagName("tr");
+    for (i = 0; i < tr.length; i++) {
+        td = tr[i].getElementsByTagName("td")[fill];
+        if (td) {
+            txtValue = td.textContent || td.innerText;
+            if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                tr[i].style.display = "";
+                count++;
+            } else {
+                tr[i].style.display = "none";
+            }
+        }
+    }
+    console.log(count);
+}
+
+function showPromotion() {
+    var db = openDatabase('mydata', '1.0', 'Test DB', 2 * 1024 * 1024);
+    const list = document.querySelector('#myTable');
+    db.transaction(function (tx) {
+        tx.executeSql('SELECT * FROM promotions', [], function (tx, results) {
+            var len = results.rows.length, i;
+            for (i = 0; i < len; i++) {
+                procode = results.rows.item(i).code
+                proname = results.rows.item(i).name
+                prodis = results.rows.item(i).discount
+                start = results.rows.item(i).startDate
+                end = results.rows.item(i).endDate
+                console.log(procode);
+                node = `
+                        <tr>
+                            <td  align="center" id="oldcode`+ i + `">` + procode + `</td>
+                            <td  align="center">` + proname + `</td>
+                            <td  align="center">` + prodis + `</td>
+                            <td  align="center">` + start + `</td>
+                            <td  align="center">` + end + `</td>
+                            <td><div class="product_button_red ml-auto mr-auto trans_200" style="display: inline-block"><a href="#delete`+ i + `">ERASE</a></div></td>
+                            
+                        </tr>
+                        <div id="delete`+ i + `" class="overlay">
+                            <div class="popup">
+                                <h2>Confirmation</h2>
+                                <a class="close" href="#">&times;</a>
+                                    <div class="product_button" style="display: inline-block">
+                                        <a href="#">Cancel</a>
+                                    </div>
+                                    <div class="product_button_red" style="display: inline-block" onclick="deletePromotion(`+ i + `)">
+                                        <a href="#">Confirm</a>
+                                    </div>
+                            </div>
+                        </div>
+                        `;
+                list.insertAdjacentHTML('beforeend', node)
+            }
+        }, null);
+    });
+}
+
+function addEmployee() {
+
+    var db = openDatabase('mydata', '1.0', 'Test DB', 2 * 1024 * 1024);
+
+    var fname = document.getElementById('fnameA').value;
+    var lname = document.getElementById('lnameA').value;
+    var number = document.getElementById('empNoA').value;
+    var extension = document.getElementById('exA').value;
+    var email = document.getElementById('emailA').value;
+    var report = document.getElementById('reportA').value;
+    var office = document.getElementById('officeA').value;
+    var position = document.getElementById('posA').value;
+    
+
+    /*console.log(name);
+    console.log(code);
+    console.log(catalog);
+    console.log(scale);
+    console.log(vendor);
+    console.log(des);
+    console.log(amount);
+    console.log(price);
+    console.log(msrp);*/
+
+    db.transaction(function (tx) {
+        var insert = 'INSERT INTO employees VALUES (?,?,?,?,?,?,?,?)';
+        tx.executeSql(insert, [number, lname, fname, extension, email, office, report, position]);
+    })
+    
+    setTimeout(() => window.location.reload(), 600);
+}
+
+function updateEmployee(id) {
+
+    var db = openDatabase('mydata', '1.0', 'Test DB', 2 * 1024 * 1024);
+
+    var fname = document.getElementById('Fname' + id).value;
+    var lname = document.getElementById('Lname' + id).value;
+    var olden = document.getElementById('oldnum' + id).innerHTML;
+    console.log(olden)
+    var employee_no = document.getElementById('codeE' + id).value;
+    var position = document.getElementById('poE' + id).value;
+    
+
+    db.transaction(function (tx) {
+        var update
+        update = 'UPDATE employees SET lastname = ? WHERE employeeNumber = ?';
+        tx.executeSql(update, [lname, olden]);
+        update = 'UPDATE employees SET firstname = ? WHERE employeeNumber = ?';
+        tx.executeSql(update, [fname, olden]);
+        update = 'UPDATE employees SET lastname = ? WHERE employeeNumber = ?';
+        tx.executeSql(update, [lname, olden]);
+        update = 'UPDATE employees SET jobTitle = ? WHERE employeeNumber = ?';
+        tx.executeSql(update, [position, olden]);
+        update = 'UPDATE employees SET employeeNumber = ? WHERE lastname = ? AND firstname = ?';
+        tx.executeSql(update, [employee_no, lname, fname]);
+    })
+
+    setTimeout(() => window.location.reload(), 600);
+}
+
+function dismissEmployee(id) {
+
+    var db = openDatabase('mydata', '1.0', 'Test DB', 2 * 1024 * 1024);
+
+    db.transaction(function (tx) {
+        var del = 'DELETE FROM employees WHERE employeeNumber = ?';
+        var number = document.getElementById('oldnum' + id).innerHTML;
+        tx.executeSql(del, [number]);
+    })
+
+    setTimeout(() => window.location.reload(), 600);
+}
+
+function myFunctionEmp(value) {
+    console.log(value)
+    var input, filter, table, tr, td, i, txtValue, fill
+    count = 0;
+    if (value == 'Employee No.') fill = 0;
+    else if (value == 'Name') fill = 1;
+    
+
+    console.log(fill)
+    input = document.getElementById("inpt_search");
+    filter = input.value.toUpperCase();
+    table = document.getElementById("myTable");
+    tr = table.getElementsByTagName("tr");
+    for (i = 0; i < tr.length; i++) {
+        td = tr[i].getElementsByTagName("td")[fill];
+        if (td) {
+            txtValue = td.textContent || td.innerText;
+            if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                tr[i].style.display = "";
+                count++;
+            } else {
+                tr[i].style.display = "none";
+            }
+        }
+    }
+    console.log(count);
+}
+
+function showEmployee() {
+    var pos = "president"
+    var db = openDatabase('mydata', '1.0', 'Test DB', 2 * 1024 * 1024);
+    const list = document.querySelector('#myTable');
+    if(pos == "president"){
+        db.transaction(function (tx) {
+            tx.executeSql('SELECT * FROM employees,offices WHERE employees.officeCode = offices.officeCode AND employees.jobTitle != "President"', [], function (tx, results) {
+                var len = results.rows.length, i;
+                for (i = 0; i < len; i++) {
+                    empNo = results.rows.item(i).employeeNumber
+                    fname = results.rows.item(i).firstName
+                    lname = results.rows.item(i).lastName
+                    job = results.rows.item(i).jobTitle
+                    office = results.rows.item(i).officeCode
+                    country = results.rows.item(i).country
+                    city = results.rows.item(i).city
+                    node = `
+                    <tr>
+                        <td  align="center" id="oldnum`+ i + `">` + empNo + `</td>
+                        <td  align="center">` + fname + " " + lname +`</td>
+                        <td  align="center">` + job + `</td>
+                        
+                        
+                        <td> <div class="product_button ml-auto mr-auto trans_200" style="display: inline-block""><a href="#update`+ i + `">Update</a></div></button>
+                            
+                        </td>
+                        <td><div class="product_button_red ml-auto mr-auto trans_200" style="display: inline-block"><a href="#delete`+ i + `">dismiss</a></div></td>
+                    </tr>
+                    <div id="update`+ i + `" class="overlay">
+                        <div class="popup">
+                            <h2>Promote/Demote</h2>
+                            <a class="close" href="#">&times;</a>
+                            <h6>First Name</h6>
+                                <input type="text" id="Fname`+ i + `" value="` + fname + `">
+                            <h6>Last Name</h6>
+                                <input type="text" id="Lname`+ i + `" value="` + lname + `">
+                            <h6>Employee No.</h6>
+                                <input type="text" id="codeE` + i + `" value="` + empNo + `">
+                            <h6>Position</h6>
+                                <input type="text" id="poE` + i + `" value="` + job + `">
+                            
+                            <br><br><br>
+                            <div class="product_button_new ml-auto mr-auto trans_200" style="display: inline-block" onclick="updateEmployee(`+ i + `)">
+                                <a href="#">Update</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="delete`+ i + `" class="overlay">
+                        <div class="popup">
+                            <h2>Dismiss Confirmation</h2>
+                            <a class="close" href="#">&times;</a>
+                                <div class="product_button" style="display: inline-block">
+                                    <a href="#">Cancel</a>
+                                </div>
+                                <div class="product_button_red" style="display: inline-block" onclick="dismissEmployee(`+ i + `)">
+                                    <a href="#">Confirm</a>
+                                </div>
+                        </div>
+                    </div>
+                    `;
+                    list.insertAdjacentHTML('beforeend', node)
+                }
+            }, null);
+        });
+    }
+    else if(pos == "vp"){
+        db.transaction(function (tx) {
+            tx.executeSql('SELECT * FROM employees,offices WHERE employees.officeCode = offices.officeCode AND employees.jobTitle != "President" AND employees.jobTitle NOT LIKE "VP%" ', [], function (tx, results) {
+                var len = results.rows.length, i;
+                for (i = 0; i < len; i++) {
+                    empNo = results.rows.item(i).employeeNumber
+                    fname = results.rows.item(i).firstName
+                    lname = results.rows.item(i).lastName
+                    job = results.rows.item(i).jobTitle
+                    office = results.rows.item(i).officeCode
+                    country = results.rows.item(i).country
+                    city = results.rows.item(i).city
+                    node = `
+                    <tr>
+                        <td  align="center" id="oldnum`+ i + `">` + empNo + `</td>
+                        <td  align="center">` + fname + " " + lname +`</td>
+                        <td  align="center">` + job + `</td>
+                        
+                        
+                        <td> <div class="product_button ml-auto mr-auto" style="display: inline-block ><a href="#update`+ i + `">update</a></div></button></td>
+                        <td><div class="product_button_red ml-auto mr-auto trans_200" style="display: inline-block"><a href="#delete`+ i + `">dismiss</a></div>
+                         </td>
+                    </tr>
+                    <div id="update`+ i + `" class="overlay">
+                        <div class="popup">
+                            <h2>Promote/Demote</h2>
+                            <a class="close" href="#">&times;</a>
+                            <h6>First Name</h6>
+                                <input type="text" id="Fname`+ i + `" value="` + fname + `">
+                            <h6>Last Name</h6>
+                                <input type="text" id="Lname`+ i + `" value="` + lname + `">
+                            <h6>Employee No.</h6>
+                                <input type="text" id="codeE` + i + `" value="` + empNo + `">
+                            <h6>Position</h6>
+                                <input type="text" id="poE` + i + `" value="` + job + `">
+                            
+                            <br><br><br>
+                            <div class="product_button_new ml-auto mr-auto trans_200" style="display: inline-block" onclick="updateEmployee(`+ i + `)">
+                                <a href="#">Update</a>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <div id="delete`+ i + `" class="overlay">
+                        <div class="popup">
+                            <h2>Dismiss Confirmation</h2>
+                            <a class="close" href="#">&times;</a>
+                                <div class="product_button" style="display: inline-block">
+                                    <a href="#">Cancel</a>
+                                </div>
+                                <div class="product_button_red" style="display: inline-block" onclick="dismissEmployee(`+ i + `)">
+                                    <a href="#">Confirm</a>
+                                </div>
+                        </div>
+                    </div>
+                    `;
+                    list.insertAdjacentHTML('beforeend', node)
+                }
+            }, null);
+        });
+    }
+    else if(pos == "manager"){
+        db.transaction(function (tx) {
+            tx.executeSql('SELECT * FROM employees,offices WHERE employees.officeCode = offices.officeCode AND employees.jobTitle != "President" AND employees.jobTitle NOT LIKE "VP%" AND employees.jobTitle NOT LIKE "%Manager%"', [], function (tx, results) {
+                var len = results.rows.length, i;
+                for (i = 0; i < len; i++) {
+                    empNo = results.rows.item(i).employeeNumber
+                    fname = results.rows.item(i).firstName
+                    lname = results.rows.item(i).lastName
+                    job = results.rows.item(i).jobTitle
+                    office = results.rows.item(i).officeCode
+                    country = results.rows.item(i).country
+                    city = results.rows.item(i).city
+                    node = `
+                    <tr>
+                        <td  align="center" id="oldnum`+ i + `">` + empNo + `</td>
+                        <td  align="center">` + fname + " " + lname +`</td>
+                        <td  align="center">` + job + `</td>
+                        
+                        
+                        <td> <div class="product_button ml-auto mr-auto" style="display: inline-block" ><a href="#update`+ i + `">update</a></div></button></td>
+                        <td><div class="product_button_red ml-auto mr-auto trans_200" style="display: inline-block"><a href="#delete`+ i + `">dismiss</a></div>
+                         </td>
+                    </tr>
+                    <div id="update`+ i + `" class="overlay">
+                        <div class="popup">
+                            <h2>Promote/Demote</h2>
+                            <a class="close" href="#">&times;</a>
+                            <h6>First Name</h6>
+                                <input type="text" id="Fname`+ i + `" value="` + fname + `">
+                            <h6>Last Name</h6>
+                                <input type="text" id="Lname`+ i + `" value="` + lname + `">
+                            <h6>Employee No.</h6>
+                                <input type="text" id="codeE` + i + `" value="` + empNo + `">
+                            <h6>Position</h6>
+                                <input type="text" id="poE` + i + `" value="` + job + `">
+                            
+                            <br><br><br>
+                            <div class="product_button_new ml-auto mr-auto trans_200" style="display: inline-block" onclick="updateEmployee(`+ i + `)">
+                                <a href="#">Update</a>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <div id="delete`+ i + `" class="overlay">
+                        <div class="popup">
+                            <h2>Dismiss Confirmation</h2>
+                            <a class="close" href="#">&times;</a>
+                                <div class="product_button" style="display: inline-block">
+                                    <a href="#">Cancel</a>
+                                </div>
+                                <div class="product_button_red" style="display: inline-block" onclick="dismissEmployee(`+ i + `)">
+                                    <a href="#">Confirm</a>
+                                </div>
+                        </div>
+                    </div>
+                    `;
+                    list.insertAdjacentHTML('beforeend', node)
+                }
+            }, null);
+        });
+    }
+    else if(pos == "sale"){
+        db.transaction(function (tx) {
+            tx.executeSql('SELECT * FROM employees', [], function (tx, results) {
+                var len = results.rows.length, i;
+                for (i = 0; i < len; i++) {
+                    empNo = results.rows.item(i).employeeNumber
+                    fname = results.rows.item(i).firstName
+                    lname = results.rows.item(i).lastName
+                    job = results.rows.item(i).jobTitle
+                    office = results.rows.item(i).officeCode
+                    
+                    node = `
+                    <tr>
+                        <td  align="center" id="oldnum`+ i + `">` + empNo + `</td>
+                        <td  align="center">` + fname + " " + lname +`</td>
+                        <td  align="center">` + job + `</td>
+                        
+                        
+                        <td> <div class="product_button ml-auto mr-auto" style="display: inline-block" ><a href="#">Not Allowed</a></div></button></td>
+                        <td><div class="product_button_red ml-auto mr-auto trans_200" style="display: inline-block"><a href="#">Not Allowed</a></div>
+                         </td>
+                    </tr>
+                    <div id="update`+ i + `" class="overlay">
+                        <div class="popup">
+                            <h2>Promote/Demote</h2>
+                            <a class="close" href="#">&times;</a>
+                            <h6>First Name</h6>
+                                <input type="text" id="Fname`+ i + `" value="` + fname + `">
+                            <h6>Last Name</h6>
+                                <input type="text" id="Lname`+ i + `" value="` + lname + `">
+                            <h6>Employee No.</h6>
+                                <input type="text" id="codeE` + i + `" value="` + empNo + `">
+                            <h6>Position</h6>
+                                <input type="text" id="poE` + i + `" value="` + job + `">
+                            
+                            <br><br><br>
+                            <div class="product_button_new ml-auto mr-auto trans_200" style="display: inline-block" onclick="updateEmployee(`+ i + `)">
+                                <a href="#">Update</a>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <div id="delete`+ i + `" class="overlay">
+                        <div class="popup">
+                            <h2>Dismiss Confirmation</h2>
+                            <a class="close" href="#">&times;</a>
+                                <div class="product_button" style="display: inline-block">
+                                    <a href="#">Cancel</a>
+                                </div>
+                                <div class="product_button_red" style="display: inline-block" onclick="dismissEmployee(`+ i + `)">
+                                    <a href="#">Confirm</a>
+                                </div>
+                        </div>
+                    </div>
+                    `;
+                    list.insertAdjacentHTML('beforeend', node)
+                }
+            }, null);
+        });
+    }
+}
+
 
 function test() {
     console.log("TEST!!!")
