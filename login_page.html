@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Classic Model Shop</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="aStar Fashion Template Project">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="styles/bootstrap-4.1.3/bootstrap.css">
+    <link href="plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/owl.carousel.css">
+    <link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/owl.theme.default.css">
+    <link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/animate.css">
+    <link rel="stylesheet" type="text/css" href="styles/categories.css">
+
+    <link rel="stylesheet" type="text/css" href="styles/search_bar.css">
+    <link rel="stylesheet" type="text/css" href="styles/side_bar.css">
+    <link rel="stylesheet" type="text/css" href="css/popup.css">
+    <link rel="stylesheet" type="text/css" href="styles/login_button.css">
+</head>
+
+<body>
+    <!-- Login Button -->
+    <button class="login_button"
+    onclick="document.getElementById('login_form').style.display='block'">Login</button>
+
+    <!-- Login Form -->
+    <div id="login_form" class="login_form_model">
+
+        <form class="login_form_model_content animate" onsubmit="login_check();">
+            <div class="login_imgcontainer">
+                <span onclick="document.getElementById('login_form').style.display='none'" class="login_form_close"
+                    title="Cancle">&times;</span>
+                <img src="images/avatar.png" alt="Avatar" class="login_avatar">
+            </div>
+
+            <div class="login_form_container">
+                <label for="uname"><b>Username</b></label>
+                <input class="login_input" type="text" placeholder="Enter Username" id="login_username" name="uname"
+                    required>
+
+                <label for="psw"><b>Password</b></label>
+                <input class="login_input" type="password" placeholder="Enter Password" id="login_userpassword"
+                    name="psw" required>
+
+                <button class="summit_button" type="submit">Login</button>
+                <!-- <label>
+                    <input type="checkbox" checked="checked" name="remember">
+                    Remember me
+                </label> -->
+            </div>
+
+            <div class="login_form_container" style="background-color:#f1f1f1">
+                <!-- <button type="button"
+                        onclick="document.getElementById('login_form').style.display='none'"
+                        class="cancelbtn">Cancel</button> -->
+                <!-- <span class="psw">Forgot <a href="#">password?</a></span> -->
+            </div>
+        </form>
+    </div>
+
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="styles/bootstrap-4.1.3/popper.js"></script>
+    <script src="styles/bootstrap-4.1.3/bootstrap.min.js"></script>
+    <script src="plugins/greensock/TweenMax.min.js"></script>
+    <script src="plugins/greensock/TimelineMax.min.js"></script>
+    <script src="plugins/scrollmagic/ScrollMagic.min.js"></script>
+    <script src="plugins/greensock/animation.gsap.min.js"></script>
+    <script src="plugins/greensock/ScrollToPlugin.min.js"></script>
+    <script src="plugins/OwlCarousel2-2.2.1/owl.carousel.js"></script>
+    <script src="plugins/easing/easing.js"></script>
+    <script src="plugins/parallax-js-master/parallax.min.js"></script>
+    <script src="plugins/Isotope/isotope.pkgd.min.js"></script>
+    <script src="plugins/Isotope/fitcolumns.js"></script>
+    <script src="js/categories.js"></script>
+    <script src="js/function.js"></script>
+    <script src="js/search_bar.js"></script>
+    <script src="js/login_button.js"></script>
+    <script src="js/login.js"></script>
+    <script src="js/employee_mn.js"></script>
+</body>
+
+</html>

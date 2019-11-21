@@ -1,0 +1,109 @@
+﻿<!-- <SCRIPT LANGUAGE="JavaScript">
+    function Getstats() {
+        window.status = ('Attempting to Login to user area.')
+
+        var AccId;
+        var iName;
+        AccId = document.iAccInput.iAccID.value
+        iName = document.iAccInput.iName.value
+
+        if (AccId == "" || iName == "") {
+            alert('\nERROR\nYou must enter ALL Details,\nto View your statistics.\n');
+            window.status = ('Missing data or Invalid. Check spelling and Ensure Names are in Correct Case.')
+        } else {
+            var location = '';
+            if (iName=='love' && AccId=='cat') {
+            location=("page1.html");
+            }
+            else if (iName=='mom' && AccId=='love') {
+            location=("page2.html");
+            }
+            else alert('Wrong pair');
+
+            this.location.href = location;
+        }
+    }
+</SCRIPT>
+<hr>
+<FORM NAME="iAccInput">
+    <CENTER>
+        <TABLE BORDER="1px" bordercolor="#c0c0c0" cellpadding="5" cellspacing="0">
+            <TR>
+                <TD ALIGN="RIGHT">
+                    <p>
+                        <FONT SIZE="3" FACE="Arial"><B>User Name:</B></FONT>
+                    </p>
+                </td>
+
+                <TD>
+                    <INPUT TYPE="TEXT" NAME="iName" MAXLENGTH="15">
+                </td>
+                <TD> &nbsp;
+                </td>
+            </tr>
+            <tr>
+                <TD ALIGN="RIGHT">
+
+                    <p>
+                        <FONT SIZE="3" FACE="Arial"><B>Password:</B></FONT>
+                    </p>
+                </TD>
+                <td>
+                    <INPUT NAME="iAccID" MAXLENGTH="15" HEIGHT="50">
+                </TD>
+                <td align="center">
+                    <INPUT TYPE="BUTTON" VALUE=" Login " onClick="Getstats()" HEIGHT="40" WIDTH="50"><BR><br>
+                    <INPUT TYPE="RESET" VALUE=" Reset "
+                        onClick="window.status=('RESET: Please enter your USERNAME and ACCOUNT ID.')" WIDTH="50">
+
+                </td>
+            </TR>
+        </TABLE> -->
+
+
+<!-- README
+
+This HTML is used to create login information only and serves no other purpose -->
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/aes.js"></script>
+
+<script type="text/javascript">
+    var encrypted = CryptoJS.AES.encrypt("123", "Secret Passphrase");
+
+    var decrypted = CryptoJS.AES.decrypt(encrypted, "Secret Passphrase");
+
+    var db = openDatabase('mydata', '1.0', 'Test DB', 2 * 1024 * 1024);
+
+    db.transaction(function (tx) {
+
+        // Delete 'login' table previously created
+        tx.executeSql("DROP TABLE login", null,
+            function (tx, results) {
+                console.log("Successfully Dropped")
+            },
+            function (tx, error) {
+                console.log("Could not delete")
+            }
+        );
+
+        // Creating 'login' table again
+        tx.executeSql(
+            "CREATE TABLE IF NOT EXISTS login (password CHAR(255) NOT NULL, employeeNumber int, FOREIGN KEY (employeeNumber) REFERENCES employees (employeeNumber))",
+            null,
+
+            // Insert testing values
+            function (transaction, sqlResultSet) {
+                tx.executeSql(
+                    "INSERT INTO 'login' VALUES(?,'1002')",
+                    [decrypted], null,
+                    function (transaction, error) {
+                        console.log('error on insert: ' + error.message);
+                    });
+                // more inserts into 'login' table ...
+            },
+            function (transaction, error) {
+                console.log('error on table create: ' + error.message);
+            });
+    })
+</script>
