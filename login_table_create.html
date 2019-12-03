@@ -68,16 +68,14 @@ This HTML is used to create login information only and serves no other purpose -
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/aes.js"></script>
 
-<script type="text/javascript">
-    var encrypted = CryptoJS.AES.encrypt("123", "Secret Passphrase");
-
-    var decrypted = CryptoJS.AES.decrypt(encrypted, "Secret Passphrase");
-
+<script>
     var db = openDatabase('mydata', '1.0', 'Test DB', 2 * 1024 * 1024);
+</script>
 
+
+<script>
+    // Delete 'login' table previously created
     db.transaction(function (tx) {
-
-        // Delete 'login' table previously created
         tx.executeSql("DROP TABLE login", null,
             function (tx, results) {
                 console.log("Successfully Dropped")
@@ -86,24 +84,57 @@ This HTML is used to create login information only and serves no other purpose -
                 console.log("Could not delete")
             }
         );
+    });
+</script>
 
-        // Creating 'login' table again
-        tx.executeSql(
-            "CREATE TABLE IF NOT EXISTS login (password CHAR(255) NOT NULL, employeeNumber int, FOREIGN KEY (employeeNumber) REFERENCES employees (employeeNumber))",
+<script type="text/javascript">
+    // variables used in encrypting
+    var encrypted;
+    var decrypted;
+
+    db.transaction(function (tx) {
+
+        // Accessing 'employees' table for information
+        tx.executeSql('SELECT extension, employeeNumber FROM employees',
             null,
+            function (tx, results) {
 
-            // Insert testing values
-            function (transaction, sqlResultSet) {
+                // Creating 'login' table
                 tx.executeSql(
-                    "INSERT INTO 'login' VALUES(?,'1002')",
-                    [decrypted], null,
+                    "CREATE TABLE IF NOT EXISTS login (password CHAR(255) NOT NULL, employeeNumber int, FOREIGN KEY (employeeNumber) REFERENCES employees (employeeNumber))",
+                    null,
+                    null,
                     function (transaction, error) {
-                        console.log('error on insert: ' + error.message);
+                        console.log('error on table create: ' + error.message);
                     });
-                // more inserts into 'login' table ...
+
+                console.log("length of information accquired from employees table: " + results.rows.length);
+
+                // Create 'login' table using the information
+                var i;
+                for (i = 0; i < results.rows.length; i++) {
+                    console.log("inserting number: " + i);
+
+                    // Encrypt password (in this case, extension)
+                    encrypted = CryptoJS.AES.encrypt(results.rows.item(i).extension, "Secret Passphrase");
+                    decrypted = CryptoJS.AES.decrypt(encrypted, "Secret Passphrase");
+                    console.log("- encrypted phrase: " + results.rows.item(i).extension + " -> " + decrypted);
+                    console.log("- employee number: " + results.rows.item(i).employeeNumber);
+
+                    // Insert information in to 'login' table
+                    tx.executeSql(
+                        "INSERT INTO 'login' (password, employeeNumber) VALUES(?, ?)",
+                        [decrypted, results.rows.item(i).employeeNumber],
+                        null,
+                        function (transaction, error) {
+                            console.log('error on insert ' + emNum + ' info: ' + error.message);
+                        });
+
+                }
+                console.log("total inserts: " + i);
             },
             function (transaction, error) {
-                console.log('error on table create: ' + error.message);
+                console.log('error on accessing employees table:' + error.message);
             });
     })
 </script>
