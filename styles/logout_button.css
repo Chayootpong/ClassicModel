@@ -1,0 +1,31 @@
+button.logout_button {
+    color: #fff;
+    background-color: #1a1a1a;
+}
+
+button.logout_button:hover {
+    background-color: #bbe432;
+    transition: all 0.3s;
+}
+
+button.logout_button[aria-expanded="true"] {
+    background-color: #bbe432;
+}
+
+div.logout_dropdown {
+    padding: 0;
+}
+
+div.logout_dropdown a.dropdown-item {
+    color: #bcbcbc;
+}
+
+div.logout_dropdown a.dropdown-item:hover {
+    color: #000000;
+    background-color: transparent;
+    transition: all 0.3s;
+}
+
+div.logout_dropdown a.dropdown-item:active {
+    background-color: #bbe432;
+}
