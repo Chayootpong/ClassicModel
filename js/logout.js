@@ -45,12 +45,12 @@ function logout() {
         tx.executeSql("DROP TABLE loginSession", null,
             function (tx, results) {
                 console.log("successfully dropped loginSession table");
+                window.location = "login_page.html";
             },
             function (tx, error) {
                 console.log("cloud not delete loginSession talbe");
+                window.location = "login_page.html";
             }
         );
     });
-
-    window.location = "login_page.html";
 }
