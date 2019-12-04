@@ -132,6 +132,17 @@
                 function (transaction, error) {
                     console.log('error on accessing employees table:' + error.message);
                 });
+
+                // If 'loginSession' table already exits, redirect to the page
+                tx.executeSql(
+                        "SELECT * FROM loginSession",
+                        null,
+                        function (tx, results) {
+                            window.location = "Searching.html";
+                        },
+                        function (transaction, error) {
+                            console.log('no login session found: ' + error.message);
+                        });
         })
     </script>
 
