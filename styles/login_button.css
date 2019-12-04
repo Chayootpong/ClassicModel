@@ -1,3 +1,8 @@
+img.login_avatar {
+    max-width: 128px;
+    max-height: 128px;
+}
+
 button.login_button {
     background-color: #bbe432;
     color: white;
