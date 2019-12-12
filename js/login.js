@@ -38,7 +38,7 @@ function login_check() {
                     });
 
                 // Redirect to specific page
-                window.location = "Searching.html";
+                window.location = "Finding.html";
             } else {
                 alert("Invalid username or password");
             }
