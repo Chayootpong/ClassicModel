@@ -6,15 +6,3 @@
 3. Following to Local > Google > Chrome > User Data > Default > databases > file_0, you will see a file in this folder.
 4. Replace that file with ClassicModel.db by renamed as same as old file. (type also)
 5. Open HTML file again, database now store in Google Chrome WebSQL.
-
-<b>Complete</b>
-1. Complete Fiding page (Searching.html)
-  <br>1.1. Search products in stock by Name, ProductID, Catagory, Scale.
-  <br>1.2. Order sorting. (0-9, A-Z)
-  <br>1.3. Popup for description.
-  <br>1.4. Add search product to cart.
-  
-2. Complete Stocking page (Stocking.html)
-  <br>1.1. Can add product.
-  <br>1.2. Can edit product.
-  <br>1.3. Can delete product.
