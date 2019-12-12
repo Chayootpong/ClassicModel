@@ -44,14 +44,19 @@ body
 	background: #FFFFFF;
 	color: #a5a5a5;
 }
-div
-{
-	display: block;
-	position: relative;
-	-webkit-box-sizing: border-box;
+div {
+    display: block;
+    position: relative;
+    -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
 }
+
+divx {
+    display: inline;
+    position: relative;
+}
+
 ul
 {
 	list-style: none;
@@ -121,7 +126,7 @@ h4{font-size: 18px;}
 h5{font-size: 14px;}
 h1, h2, h3, h4, h5, h6
 {
-	font-family: 'Open Sans', sans-serif;
+	font-family: poppins;
 	-webkit-font-smoothing: antialiased;
 	-webkit-text-shadow: rgba(0,0,0,.01) 0 0 1px;
 	text-shadow: rgba(0,0,0,.01) 0 0 1px;
@@ -440,7 +445,8 @@ section
 {
 	padding-left: 25px;
 	padding-right: 26px;
-	margin-top: 64px;
+	margin-top: 35px;
+	margin-bottom: 10px;
 }
 .sidebar_logo a
 {
@@ -1261,7 +1267,6 @@ section
 	width: calc(100% / 4);
 	padding-left: 14px;
 	padding-right: 13px;
-	margin-bottom: 45px;
 }
 .product_image
 {
@@ -1395,6 +1400,30 @@ section
 	text-align: center;
 	margin-top: 22px;
 }
+.product_button_long
+{
+	width: 280px;
+	height: 45px;
+	background: #edf4f6;
+	text-align: center;
+	margin-top: 5px;
+}
+.product_button_short
+{
+	width: 70px;
+	height: 45px;
+	background: #edf4f6;
+	text-align: center;
+	margin-top: 5px;
+}
+.product_button_short_red
+{
+	width: 70px;
+	height: 45px;
+	background: #edf4f6;
+	text-align: center;
+	margin-top: 5px;
+}
 .product_button_new {
     width: 138px;
     height: 45px;
@@ -1414,13 +1443,32 @@ section
 {
 	background: #bbe432;
 }
+.product_button_long:hover
+{
+	background: #bbe432;
+}
 .product_button_new:hover {
+    background: #bbe432;
+}
+.product_button_short:hover {
     background: #bbe432;
 }
 .product_button_red:hover {
     background: #ff413b;
 }
+.product_button_short_red:hover {
+    background: #ff413b;
+}
 .product_button a
+{
+	display: block;
+	font-size: 14px;
+	font-weight: 700;
+	text-transform: uppercase;
+	color: #1a1a1a;
+	line-height: 45px;
+}
+.product_button_long a
 {
 	display: block;
 	font-size: 14px;
@@ -1438,6 +1486,24 @@ section
     line-height: 45px;
 }
 .product_button_red a {
+    display: block;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #1a1a1a;
+    line-height: 45px;
+}
+
+.product_button_short a {
+    display: block;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #1a1a1a;
+    line-height: 45px;
+}
+
+.product_button_short_red a {
     display: block;
     font-size: 14px;
     font-weight: 700;

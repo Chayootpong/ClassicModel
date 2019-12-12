@@ -1,4 +1,4 @@
-@charset "utf-8";
+﻿@charset "utf-8";
 /* CSS Document */
 
 /******************************
@@ -51,6 +51,10 @@ div
 	-webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
+}
+spanx:hover
+{
+    border: 1px dotted grey;
 }
 ul
 {
@@ -1104,24 +1108,28 @@ section
 }
 .item_list > *:nth-child(2)
 {
-	width: 13%;
+	width: 15%;
 }
 .item_list > *:nth-child(3)
 {
-	width: 13%;
+	width: 5%;
 	margin-right: 3%;
 }
 .item_list > *:nth-child(4)
 {
-	width: 13%;
+	width: 10%;
 }
 .item_list > *:nth-child(5)
 {
-	width: 9%;
+	width: 12%;
 }
 .item_list > *:nth-child(6)
 {
-	width: 12%;
+	width: 10%;
+}
+
+.item_list > *:nth-child(7) {
+    width: 5%;
 }
 .cart_items
 {
@@ -1154,12 +1162,12 @@ section
 }
 .product_name
 {
-	padding-left: 50px;
+	padding-left: 20px;
 }
 .product_name a
 {
 	font-family: 'Poppins', sans-serif;
-	font-size: 24px;
+	font-size: 18px;
 	color: #414141;
 	font-weight: 600;
 	-webkit-transition: all 200ms ease;
@@ -1238,6 +1246,11 @@ section
 	text-align: center;
 	margin-bottom: 10px;
 }
+.buttonx {
+    height: 47px;
+    text-align: center;
+    margin-bottom: 10px;
+}
 .button:not(:last-child)
 {
 	margin-right: 24px;
@@ -1252,6 +1265,17 @@ section
 	font-weight: 700;
 	color: #414141;
 	text-transform: uppercase;
+}
+
+.buttonx a {
+    display: block;
+    line-height: 47px;
+    padding-left: 47px;
+    padding-right: 47px;
+    font-size: 14px;
+    font-weight: 700;
+    color: #414141;
+    text-transform: uppercase;
 }
 .button_continue
 {
@@ -1340,6 +1364,7 @@ section
 	border: none;
 	background: #FFFFFF;
 	outline: none;
+    padding-left: 15px;
 }
 .coupon_button
 {
@@ -1906,3 +1931,15 @@ section
 	font-size: 12px;
 	color: #787878;
 }
+
+.cssAddr {
+    width: 350px;
+    padding: 12px 20px;
+    margin-top: 8px;
+    margin-left: 20px;
+    display: block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+    
