@@ -1,7 +1,7 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Categories</title>
+<title>Cart</title>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="description" content="aStar Fashion Template Project">
@@ -11,8 +11,8 @@
 <link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/owl.carousel.css">
 <link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/owl.theme.default.css">
 <link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/animate.css">
-<link rel="stylesheet" type="text/css" href="styles/categories.css">
-<link rel="stylesheet" type="text/css" href="styles/categories_responsive.css">
+<link rel="stylesheet" type="text/css" href="styles/cart.css">
+<link rel="stylesheet" type="text/css" href="styles/cart_responsive.css">
 </head>
 <body>
 
@@ -275,63 +275,72 @@
 	<!-- Home -->
 
 	<div class="home">
-		<div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="images/categories.jpg" data-speed="0.8"></div>
+		<div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="images/product_background.jpg" data-speed="0.8"></div>
 		<div class="home_container">
 			<div class="home_content">
-				<div class="home_title">Shop</div>
+				<div class="home_title">Cart</div>
 				<div class="breadcrumbs">
 					<ul class="d-flex flex-row align-items-center justify-content-start">
 						<li><a href="index.html">Home</a></li>
-						<li><a href="#">Woman</a></li>
-						<li>Accessories</li>
+						<li>Your Cart</li>
 					</ul>
 				</div>
 			</div>
 		</div>
 	</div>
 
-	<!-- Products -->
+	<!-- Cart -->
 
-	<div class="products">
+	<div class="cart_section">
+		<div class="section_container">
+			<div class="container">
+				<div class="row">
+					<div class="col">
+						<div class="cart_container">
+							
+							<!-- Cart Bar -->
+							<div class="cart_bar">
+								<ul class="cart_bar_list item_list d-flex flex-row align-items-center justify-content-start">
+									<li>Product</li>
+									<li>Color</li>
+									<li>Size</li>
+									<li>Price</li>
+									<li>Quantity</li>
+									<li>Total</li>
+								</ul>
+							</div>
 
-		<!-- Sorting & Filtering -->
-		<div class="products_bar">
-			<div class="section_container">
-				<div class="container">
-					<div class="row">
-						<div class="col">
-							<div class="products_bar_content d-flex flex-column flex-xxl-row align-items-start align-items-xxl-center justify-content-start">
-								<div class="product_categories">
-									<ul class="d-flex flex-row align-items-start justify-content-start flex-wrap">
-										<li class="active"><a href="#">All</a></li>
-										<li><a href="#">Hot Products</a></li>
-										<li><a href="#">New Products</a></li>
-										<li><a href="#">Sale Products</a></li>
-									</ul>
-								</div>
-								<div class="products_bar_side ml-xxl-auto d-flex flex-row align-items-center justify-content-start">
-									<div class="products_dropdown product_dropdown_sorting">
-										<div class="isotope_sorting_text"><span>Default Sorting</span><i class="fa fa-caret-down" aria-hidden="true"></i></div>
-										<ul>
-											<li class="item_sorting_btn" data-isotope-option='{ "sortBy": "original-order" }'>Default</li>
-											<li class="item_sorting_btn" data-isotope-option='{ "sortBy": "price" }'>Price</li>
-											<li class="item_sorting_btn" data-isotope-option='{ "sortBy": "name" }'>Name</li>
-										</ul>
-									</div>
-									<div class="product_view d-flex flex-row align-items-center justify-content-start">
-										<div class="view_item active"><img src="images/view_1.png" alt=""></div>
-										<div class="view_item"><img src="images/view_2.png" alt=""></div>
-										<div class="view_item"><img src="images/view_3.png" alt=""></div>
-									</div>
-									<div class="products_dropdown text-right product_dropdown_filter">
-										<div class="isotope_filter_text"><span>Filter</span><i class="fa fa-caret-down" aria-hidden="true"></i></div>
-										<ul>
-											<li class="item_filter_btn" data-filter="*">All</li>
-											<li class="item_filter_btn" data-filter=".hot">Hot</li>
-											<li class="item_filter_btn" data-filter=".new">New</li>
-											<li class="item_filter_btn" data-filter=".sale">Sale</li>
-										</ul>
-									</div>
+							<!-- Cart Items -->
+							<div class="cart_items">
+								<ul class="cart_items_list">
+
+									<!-- Cart Item -->
+									<li class="cart_item item_list d-flex flex-lg-row flex-column align-items-lg-center align-items-start justify-content-start">
+										<div class="product d-flex flex-lg-row flex-column align-items-lg-center align-items-start justify-content-start">
+											<div><div class="product_image"><img src="images/cart_1.jpg" alt=""></div></div>
+											<div class="product_name"><a href="product.html">Brown Shoulder Bag</a></div>
+										</div>
+										<div class="product_color text-lg-center product_text"><span>Color: </span>Brown</div>
+										<div class="product_size text-lg-center product_text"><span>Size: </span>One Size</div>
+										<div class="product_price text-lg-center product_text"><span>Price: </span>$19.50</div>
+										<div class="product_quantity_container">
+											<div class="product_quantity ml-lg-auto mr-lg-auto text-center">
+												<span class="product_text product_num">1</span>
+												<div class="qty_sub qty_button trans_200 text-center"><span>-</span></div>
+												<div class="qty_add qty_button trans_200 text-center"><span>+</span></div>
+											</div>
+										</div>
+										<div class="product_total text-lg-center product_text"><span>Total: </span>$19.50</div>
+									</li>
+								</ul>
+							</div>
+
+							<!-- Cart Buttons -->
+							<div class="cart_buttons d-flex flex-row align-items-start justify-content-start">
+								<div class="cart_buttons_inner ml-auto d-flex flex-row align-items-start justify-content-start flex-wrap">
+									<div class="button button_continue trans_200"><a href="categories.html">continue shopping</a></div>
+									<div class="button button_clear trans_200"><a href="categories.html">clear cart</a></div>
+									<div class="button button_update trans_200"><a href="categories.html">update cart</a></div>
 								</div>
 							</div>
 						</div>
@@ -339,53 +348,76 @@
 				</div>
 			</div>
 		</div>
-		<div class="section_container">
+
+		<div class="section_container cart_extra_container">
 			<div class="container">
 				<div class="row">
-					<div class="col">
-						<div class="products_container grid" id="diva">
-							
-                            <body onload="showStockProduct()"></body>
-							<!--<script>
-                                var db = openDatabase('mydata', '1.0', 'Test DB', 2 * 1024 * 1024);
-                                let msg = "";
 
-                                db.transaction(function (tx) {
-                                    tx.executeSql('SELECT * FROM products', [], function (tx, results) {
-                                        var len = results.rows.length, i;
-                                        for (i = 0; i < len; i++) {
-                                            msg = results.rows.item(i).productName
-                                            msg2 = results.rows.item(i).productCode
-                                            msg3 = results.rows.item(i).productLine
-                                            msg4 = results.rows.item(i).productScale
-                                            const list = document.querySelector('#diva');
-                                            node = `
-                                            <div class="product grid-item sale" style="display: inline-block">
-                                                <div class="product_inner">                                                   
-                                                    <div class="product_image">
-                                                        <img src="images/lambo.jpg" alt="">                                                          
-                                                            <div class="product_tag">` + msg4 + `</div>
-                                                    </div>
-                                                    <div class="product_content text-center">
-                                                        <div class="text_box">
-                                                            <div class="product_title" id="XXXX" ><a href="product.html">` + msg + `</a></div>
-                                                        </div>
-                                                        <div>
-                                                            <ul align='left'>
-                                                                <li><span>Code: </span> ` + msg2 + ` </li>
-                                                                <li><span>Scale: </span> ` + msg3 + ` </li>
-                                                            </ul>
-                                                        </div>           
-                                                        <div class="product_button ml-auto mr-auto trans_200" style="display: inline-block"><a href="#">update</a></div>
-                                                        <div class="product_button ml-auto mr-auto trans_200" style="display: inline-block"><a href="#">delete</a></div>
-                                                    </div>
-                                                </div>
-                                            </div>`;
-                                            list.insertAdjacentHTML('beforeend', node)
-                                        }
-                                    }, null);
-                                });
-                            </script>-->
+					<!-- Shipping & Delivery -->
+					<div class="col-xxl-6">
+						<div class="cart_extra cart_extra_1">
+							<div class="cart_extra_content cart_extra_coupon">
+								<div class="cart_extra_title">Coupon code</div>
+								<div class="coupon_form_container">
+									<form action="#" id="coupon_form" class="coupon_form">
+										<input type="text" class="coupon_input" required="required">
+										<button class="coupon_button">apply code</button>
+									</form>
+								</div>
+								<div class="shipping">
+									<div class="cart_extra_title">Shipping Method</div>
+									<ul>
+										<li class="shipping_option d-flex flex-row align-items-center justify-content-start">
+											<label class="radio_container">
+												<input type="radio" id="radio_1" name="shipping_radio" class="shipping_radio">
+												<span class="radio_mark"></span>
+												<span class="radio_text">Next day delivery</span>
+											</label>
+											<div class="shipping_price ml-auto">$4.99</div>
+										</li>
+										<li class="shipping_option d-flex flex-row align-items-center justify-content-start">
+											<label class="radio_container">
+												<input type="radio" id="radio_2" name="shipping_radio" class="shipping_radio">
+												<span class="radio_mark"></span>
+												<span class="radio_text">Standard delivery</span>
+											</label>
+											<div class="shipping_price ml-auto">$1.99</div>
+										</li>
+										<li class="shipping_option d-flex flex-row align-items-center justify-content-start">
+											<label class="radio_container">
+												<input type="radio" id="radio_3" name="shipping_radio" class="shipping_radio" checked>
+												<span class="radio_mark"></span>
+												<span class="radio_text">Personal Pickup</span>
+											</label>
+											<div class="shipping_price ml-auto">Free</div>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- Cart Total -->
+					<div class="col-xxl-6">
+						<div class="cart_extra cart_extra_2">
+							<div class="cart_extra_content cart_extra_total">
+								<div class="cart_extra_title">Cart Total</div>
+								<ul class="cart_extra_total_list">
+									<li class="d-flex flex-row align-items-center justify-content-start">
+										<div class="cart_extra_total_title">Subtotal</div>
+										<div class="cart_extra_total_value ml-auto">$29.90</div>
+									</li>
+									<li class="d-flex flex-row align-items-center justify-content-start">
+										<div class="cart_extra_total_title">Shipping</div>
+										<div class="cart_extra_total_value ml-auto">Free</div>
+									</li>
+									<li class="d-flex flex-row align-items-center justify-content-start">
+										<div class="cart_extra_total_title">Total</div>
+										<div class="cart_extra_total_value ml-auto">$29.90</div>
+									</li>
+								</ul>
+								<div class="checkout_button trans_200"><a href="checkout.html">proceed to checkout</a></div>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -612,9 +644,6 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 <script src="plugins/OwlCarousel2-2.2.1/owl.carousel.js"></script>
 <script src="plugins/easing/easing.js"></script>
 <script src="plugins/parallax-js-master/parallax.min.js"></script>
-<script src="plugins/Isotope/isotope.pkgd.min.js"></script>
-<script src="plugins/Isotope/fitcolumns.js"></script>
-<script src="js/categories.js"></script>
-<script src="js/function.js"></script>
+<script src="js/cart.js"></script>
 </body>
 </html>

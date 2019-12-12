@@ -16,9 +16,14 @@
 
     <link rel="stylesheet" type="text/css" href="styles/search_bar.css">
     <link rel="stylesheet" type="text/css" href="styles/side_bar.css">
-    <link rel="stylesheet" type="text/css" href="css/popup.css">
-    <link rel="stylesheet" type="text/css" href="css/login_button.css">
+    <link rel="stylesheet" type="text/css" href="css/popup2.css">
+
     <link rel="stylesheet" type="text/css" href="css/register.css">
+
+    <link rel="stylesheet" type="text/css" href="tableCSS/css/util.css">
+    <link rel="stylesheet" type="text/css" href="tableCSS/css/main.css">
+    <link rel="stylesheet" type="text/css" href="css/login_button.css">
+    <link rel="stylesheet" type="text/css" href="css/order_status.css">
 
     <link rel="icon" href="https://icon-library.net/images/3d-model-icon/3d-model-icon-24.jpg" type="image/x-icon" />
 
@@ -120,7 +125,8 @@
             <div class="menu_search">
                 <form action="#" class="header_search_form menu_mm">
                     <input type="search" class="search_input menu_mm" placeholder="Search" required="required">
-                    <button class="header_search_button d-flex flex-column align-items-center justify-content-center menu_mm">
+                    <button
+                        class="header_search_button d-flex flex-column align-items-center justify-content-center menu_mm">
                         <i class="fa fa-search menu_mm" aria-hidden="true"></i>
                     </button>
                 </form>
@@ -169,7 +175,7 @@
                     <a href="#" onclick="return alertCheck('Payment')"> <img src="images/payment.png" alt="" width="30" length="30">&nbsp; &nbsp; Payment</a>
                 </li>
 
-                <li>
+                <li class="active">
                     <a href="#" onclick="return alertCheck('Order_Status')"> <img src="images/order status.png" alt="" width="30" length="30">&nbsp; &nbsp; Order Status</a>
                 </li>
 
@@ -177,7 +183,7 @@
                     <a href="#" onclick="return alertCheck('Membership')"> <img src="images/membership.png" alt="" width="30" length="30">&nbsp; &nbsp; Membership</a>
                 </li>
 
-                <li class="active">
+                <li>
                     <a href="#" onclick="return alertCheck('Register')"> <img src="images/register.png" alt="" width="30" length="30">&nbsp; &nbsp; Register</a>
                 </li>
 
@@ -197,52 +203,31 @@
 
 
 
+
         <!-- Products -->
 
         <div class="products">
 
-            <!-- Sorting & Filtering -->
+            <!-- Top Page -->
             <div class="products_bar">
                 <div class="section_container">
                     <div class="container">
-                        <!-- Logout Dropdown -->
                         <div class="logout_dropdown pull-right">
-                                <button class="btn logout_button dropdown-toggle" type="button" id="logout_dropdownMenuButton"
-                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Welcome!
-                                </button>
-                                <div class="logout_dropdown dropdown-menu" aria-labelledby="logout_dropdownMenuButton">
-                                    <a class="dropdown-item" onclick="logout()">Logout</a>
-                                </div>
+                            <button class="btn logout_button dropdown-toggle" type="button" id="logout_dropdownMenuButton"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Welcome!
+                            </button>
+                            <div class="logout_dropdown dropdown-menu" aria-labelledby="logout_dropdownMenuButton">
+                                <a class="dropdown-item" onclick="logout()">Logout</a>
+                            </div>
                         </div>
                         <div class="row">
                             <div class="col">
-                                <div class="products_bar_content d-flex flex-column flex-xxl-row align-items-start align-items-xxl-center justify-content-start">
-                                    <div class="products_bar_side ml-xxl-auto d-flex flex-row align-items-center justify-content-start">
+                                <div
+                                    class="products_bar_content d-flex flex-column flex-xxl-row align-items-start align-items-xxl-center justify-content-start">
+                                    <div
+                                        class="products_bar_side ml-xxl-auto d-flex flex-row align-items-center justify-content-start">
 
-                                        <div class="products_dropdown text-right product_dropdown_filter">
-                                            <div class="isotope_filter_text">
-                                                <span id="getFilter">Search by</span><i class="fa fa-caret-down"
-                                                                                        aria-hidden="true"></i>
-                                            </div>
-                                            <ul>
-
-                                                <li class="item_filter_btn">Name</li>
-                                                <li class="item_filter_btn">Code</li>
-                                                <li class="item_filter_btn">Category</li>
-                                                <li class="item_filter_btn">Scale</li>
-
-                                            </ul>
-                                        </div>
-
-                                        <div class="cntr">
-                                            <div class="cntr-innr">
-                                                <label class="search" for="inpt_search">
-                                                    <input id="inpt_search" type="text"
-                                                           onkeyup="myFunction(document.getElementById('getFilter').innerText)" />
-                                                </label>
-                                            </div>
-                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -251,76 +236,68 @@
                 </div>
             </div>
 
-            <!-- MAIN REGISTER PAGE START HERE -->
+            <!-- MAIN Order Status PAGE START HERE -->
             <div class="section_container">
                 <div class="container">
                     <div class="row">
                         <div class="col">
-                            <div class="form-style-2">
-                                <h2>Create New Member</h2>
-                                <form>
-                                    <label>
-                                        <span>Customer Number</span><input type="text" id="customernumber"
-                                                                           class="input-field" value="">
-                                    </label>
-                                    <label>
-                                        <span>Customer Name</span><input type="text" id="customername"
-                                                                         class="input-field" value="">
-                                    </label>
-                                    <label>
-                                        <span>Contact First Name</span><input type="text" id="firstname"
-                                                                              class="input-field" value="">
-                                    </label>
-                                    <label>
-                                        <span>Contact Last Name</span><input type="text" id="lastname"
-                                                                             class="input-field" value="">
-                                    </label>
-                                    <label>
-                                        <span>Phone</span><input type="text" id="phone" class="input-field"
-                                                                 value="">
-                                    </label>
-                                    <label>
-                                        <span>Address Line 1</span><input type="text" id="addressLine1"
-                                                                          class="input-field" value="">
-                                    </label>
-                                    <label>
-                                        <span>Address Line 2</span><input type="text" id="addressLine2"
-                                                                          class="input-field" value="">
-                                    </label>
-                                    <label>
-                                        <span>City</span><input type="text" id="city" class="input-field"
-                                                                value="">
-                                    </label>
-                                    <label>
-                                        <span>State</span><input type="text" id="state" class="input-field"
-                                                                 value="">
-                                    </label>
-                                    <label>
-                                        <span>Postal Code</span><input type="text" id="postalcode"
-                                                                       class="input-field" value="">
-                                    </label>
-                                    <label>
-                                        <span>Country</span><input type="text" id="country" class="input-field"
-                                                                   value="">
-                                    </label>
-                                    <label>
-                                        <span>Employee Number</span><input type="number" id="emp_no"
-                                                                           class="input-field" value="">
-                                    </label>
-                                    <label>
-                                        <span>Credit Limit</span><input type="number" id="creditlimit"
-                                                                        class="input-field" value="">
-                                    </label>
-                                    <label>
-                                        <span> </span> <div class="product_button ml-auto mr-auto trans_200" onclick="addCustomer()"><a href="#"> Submit </a></div>
-                                    </label>
-                                </form>
-                            </div>
+                            <div class="products_container grid" id="theOrder"></div>
+                            <script>
+                                var db = openDatabase('mydata', '1.0', 'Test DB', 2 * 1024 * 1024);
+
+                                db.transaction(function (tx) {
+                                tx.executeSql('SELECT DISTINCT OD.orderNumber, CT.customerName ,O.orderDate, O.requiredDate, O.shippedDate, O.status FROM orders O, orderdetails OD, customers CT WHERE O.customerNumber = CT.customerNumber AND O.orderNumber = OD.orderNumber', [], function (tx, results) {
+                                const list = document.querySelector('#theOrder');
+                                node = `
+                                <div class="limiter">
+                                <div class="table100 ver1">
+                                <div class="wrap-table100-nextcols js-pscroll">
+                                    <div class="table100-nextcols">
+                                        <table>
+                                            <thead>
+                                                <tr class="row100 head">
+                                                    <th class="cell100 column1">NO.</th>
+                                                    <th class="cell100 column2">Order NO.</th>
+                                                    <th class="cell100 column11">Customer Name</th>
+                                                    <th class="cell100 column7">Order Date</th>
+                                                    <th class="cell100 column8">Required Date</th>
+                                                    <th class="cell100 column9">Shipped Date</th>
+                                                    <th class="cell100 column10">Status</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>`;
+                                for (var i = 0; i < results.rows.length; i++) {
+            
+                                node += `<tr class="row100 body">
+                                <td class="cell100 column1">`+ (i + 1) + `</td>
+                                <td class="cell100 column2" id="ordernum` + results.rows.item(i).orderNumber + `">` + results.rows.item(i).orderNumber + `</td>
+                                <td class="cell100 column11">` + results.rows.item(i).customerName + `</td>
+                                <td class="cell100 column7">` + results.rows.item(i).orderDate + `</td>
+                                <td class="cell100 column8">` + results.rows.item(i).requiredDate + `</td>
+                                <td class="cell100 column9"><spanx contenteditable="true" onkeyup="updateShipdate(`+results.rows.item(i).orderNumber+`)" id="sd`+results.rows.item(i).orderNumber+`">` + results.rows.item(i).shippedDate + `</spanx></td>
+                                <td class="cell100 column10">
+                                <div class="product_button ml-auto mr-auto trans_200" style="display: inline-block" onclick="showOrderStatus(`+results.rows.item(i).orderNumber+`)"><a href="#">` + results.rows.item(i).status + `</a></div>
+                                </td>
+                                </tr>`;}
+
+                                node += `</tbody>
+                                </table>
+                                </div>
+                                </div>
+                                </div>
+                                </div>`;
+
+                                list.insertAdjacentHTML('afterend', node)
+
+                                }, null);
+                                });
+                            </script>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
     </div>
 
     <script>
@@ -343,6 +320,7 @@
     <script src="js/categories.js"></script>
     <script src="js/function.js"></script>
     <script src="js/search_bar.js"></script>
+    <script src="tableCSS/js/main.js"></script>
     <script src="js/logout.js"></script>
 </body>
 

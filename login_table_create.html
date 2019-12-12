@@ -1,12 +1,10 @@
-﻿<!-- <SCRIPT LANGUAGE="JavaScript">
+<!-- <SCRIPT LANGUAGE="JavaScript">
     function Getstats() {
         window.status = ('Attempting to Login to user area.')
-
         var AccId;
         var iName;
         AccId = document.iAccInput.iAccID.value
         iName = document.iAccInput.iName.value
-
         if (AccId == "" || iName == "") {
             alert('\nERROR\nYou must enter ALL Details,\nto View your statistics.\n');
             window.status = ('Missing data or Invalid. Check spelling and Ensure Names are in Correct Case.')
@@ -19,7 +17,6 @@
             location=("page2.html");
             }
             else alert('Wrong pair');
-
             this.location.href = location;
         }
     }
@@ -34,7 +31,6 @@
                         <FONT SIZE="3" FACE="Arial"><B>User Name:</B></FONT>
                     </p>
                 </td>
-
                 <TD>
                     <INPUT TYPE="TEXT" NAME="iName" MAXLENGTH="15">
                 </td>
@@ -43,7 +39,6 @@
             </tr>
             <tr>
                 <TD ALIGN="RIGHT">
-
                     <p>
                         <FONT SIZE="3" FACE="Arial"><B>Password:</B></FONT>
                     </p>
@@ -55,14 +50,12 @@
                     <INPUT TYPE="BUTTON" VALUE=" Login " onClick="Getstats()" HEIGHT="40" WIDTH="50"><BR><br>
                     <INPUT TYPE="RESET" VALUE=" Reset "
                         onClick="window.status=('RESET: Please enter your USERNAME and ACCOUNT ID.')" WIDTH="50">
-
                 </td>
             </TR>
         </TABLE> -->
 
 
 <!-- README
-
 This HTML is used to create login information only and serves no other purpose -->
 
 
@@ -91,14 +84,11 @@ This HTML is used to create login information only and serves no other purpose -
     // variables used in encrypting
     var encrypted;
     var decrypted;
-
     db.transaction(function (tx) {
-
         // Accessing 'employees' table for information
         tx.executeSql('SELECT extension, employeeNumber FROM employees',
             null,
             function (tx, results) {
-
                 // Creating 'login' table
                 tx.executeSql(
                     "CREATE TABLE IF NOT EXISTS login (password CHAR(255) NOT NULL, employeeNumber int, FOREIGN KEY (employeeNumber) REFERENCES employees (employeeNumber))",
@@ -107,20 +97,16 @@ This HTML is used to create login information only and serves no other purpose -
                     function (transaction, error) {
                         console.log('error on table create: ' + error.message);
                     });
-
                 console.log("length of information accquired from employees table: " + results.rows.length);
-
                 // Create 'login' table using the information
                 var i;
                 for (i = 0; i < results.rows.length; i++) {
                     console.log("inserting number: " + i);
-
                     // Encrypt password (in this case, extension)
                     encrypted = CryptoJS.AES.encrypt(results.rows.item(i).extension, "Secret Passphrase");
                     decrypted = CryptoJS.AES.decrypt(encrypted, "Secret Passphrase");
                     console.log("- encrypted phrase: " + results.rows.item(i).extension + " -> " + decrypted);
                     console.log("- employee number: " + results.rows.item(i).employeeNumber);
-
                     // Insert information in to 'login' table
                     tx.executeSql(
                         "INSERT INTO 'login' (password, employeeNumber) VALUES(?, ?)",
@@ -129,7 +115,6 @@ This HTML is used to create login information only and serves no other purpose -
                         function (transaction, error) {
                             console.log('error on insert ' + emNum + ' info: ' + error.message);
                         });
-
                 }
                 console.log("total inserts: " + i);
             },

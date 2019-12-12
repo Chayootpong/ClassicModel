@@ -1,0 +1,822 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Classic Model Shop</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="aStar Fashion Template Project">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="styles/bootstrap-4.1.3/bootstrap.css">
+    <link href="plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/owl.carousel.css">
+    <link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/owl.theme.default.css">
+    <link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/animate.css">
+    <link rel="stylesheet" type="text/css" href="styles/categories.css">
+
+    <link rel="stylesheet" type="text/css" href="styles/search_bar.css">
+    <link rel="stylesheet" type="text/css" href="styles/side_bar.css">
+    <link rel="stylesheet" type="text/css" href="css/popup.css">
+
+    <link rel="icon" href="https://icon-library.net/images/3d-model-icon/3d-model-icon-24.jpg" type="image/x-icon" />
+</head>
+
+<body onload="login_onLoad()">
+
+    <div class="super_container">
+
+        <!-- Menu -->
+
+        <div class="menu d-flex flex-column align-items-start justify-content-start menu_mm trans_400">
+            <div class="menu_close_container">
+                <div class="menu_close">
+                    <div></div>
+                    <div></div>
+                </div>
+            </div>
+            <div class="menu_top d-flex flex-row align-items-center justify-content-start">
+
+                <!-- Language -->
+                <div class="info_languages has_children">
+                    <div class="language_flag">
+                        <img src="images/flag_1.svg" alt="https://www.flaticon.com/authors/freepik">
+                    </div>
+                    <div class="dropdown_text">english</div>
+                    <div class="dropdown_arrow"><i class="fa fa-angle-down" aria-hidden="true"></i></div>
+
+                    <!-- Language Dropdown Menu -->
+                    <ul>
+                        <li>
+                            <a href="#">
+                                <div class="language_flag">
+                                    <img src="images/flag_2.svg" alt="https://www.flaticon.com/authors/freepik">
+                                </div>
+                                <div class="dropdown_text">french</div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <div class="language_flag">
+                                    <img src="images/flag_3.svg" alt="https://www.flaticon.com/authors/freepik">
+                                </div>
+                                <div class="dropdown_text">japanese</div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <div class="language_flag">
+                                    <img src="images/flag_4.svg" alt="https://www.flaticon.com/authors/freepik">
+                                </div>
+                                <div class="dropdown_text">russian</div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <div class="language_flag">
+                                    <img src="images/flag_5.svg" alt="https://www.flaticon.com/authors/freepik">
+                                </div>
+                                <div class="dropdown_text">spanish</div>
+                            </a>
+                        </li>
+                    </ul>
+
+                </div>
+
+                <!-- Currency -->
+                <div class="info_currencies has_children">
+                    <div class="dropdown_text">usd</div>
+                    <div class="dropdown_arrow"><i class="fa fa-angle-down" aria-hidden="true"></i></div>
+
+                    <!-- Currencies Dropdown Menu -->
+                    <ul>
+                        <li>
+                            <a href="#">
+                                <div class="dropdown_text">EUR</div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <div class="dropdown_text">YEN</div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <div class="dropdown_text">GBP</div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <div class="dropdown_text">CAD</div>
+                            </a>
+                        </li>
+                    </ul>
+
+                </div>
+
+            </div>
+            <div class="menu_search">
+                <form action="#" class="header_search_form menu_mm">
+                    <input type="search" class="search_input menu_mm" placeholder="Search" required="required">
+                    <button class="header_search_button d-flex flex-column align-items-center justify-content-center menu_mm">
+                        <i class="fa fa-search menu_mm" aria-hidden="true"></i>
+                    </button>
+                </form>
+            </div>
+            <nav class="menu_nav">
+                <ul class="menu_mm">
+                    <li class="menu_mm"><a href="index.html">home</a></li>
+                    <li class="menu_mm"><a href="categories.html">catalog</a></li>
+                    <li class="menu_mm"><a href="customer.html">membership</a></li>
+                    <li class="menu_mm"><a href="#">order status</a></li>
+                    <li class="menu_mm"><a href="blog.html">blog</a></li>
+                    <li class="menu_mm"><a href="contact.html">contact</a></li>
+                </ul>
+            </nav>
+            <div class="menu_extra">
+                <div class="menu_social">
+                    <ul>
+                        <li><a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
+                        <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                        <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                        <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sidebar -->
+
+        <div class="sidebar">
+
+            <!-- Logo -->
+            <div class="sidebar_logo">
+                <img src="images/Logo.png" alt="" width="200" length="200">
+            </div>
+
+            <ul class="list-unstyled components">
+                <li>
+                    <a href="#" onclick="return alertCheck('Finding')"> <img src="images/fiding.png" alt="" width="30" length="30">&nbsp; &nbsp; Finding </a>
+                </li>
+
+                <li>
+                    <a href="#" onclick="return alertCheck('Cart')"> <img src="images/cart.png" alt="" width="30" length="30">&nbsp; &nbsp; Cart</a>
+                </li>
+
+                <li>
+                    <a href="#" onclick="return alertCheck('Payment')"> <img src="images/payment.png" alt="" width="30" length="30">&nbsp; &nbsp; Payment</a>
+                </li>
+
+                <li>
+                    <a href="#" onclick="return alertCheck('Order_Status')"> <img src="images/order status.png" alt="" width="30" length="30">&nbsp; &nbsp; Order Status</a>
+                </li>
+
+                <li>
+                    <a href="#" onclick="return alertCheck('Membership')"> <img src="images/membership.png" alt="" width="30" length="30">&nbsp; &nbsp; Membership</a>
+                </li>
+
+                <li>
+                    <a href="#" onclick="return alertCheck('Register')"> <img src="images/register.png" alt="" width="30" length="30">&nbsp; &nbsp; Register</a>
+                </li>
+
+                <li>
+                    <a href="#" onclick="return alertCheck('Stocking')"> <img src="images/stocking.png" alt="" width="30" length="30">&nbsp; &nbsp; Stocking</a>
+                </li>
+
+                <li>
+                    <a href="#" onclick="return alertCheck('Promotion')"> <img src="images/promotion.png" alt="" width="30" length="30">&nbsp; &nbsp; Promotion</a>
+                </li>
+
+                <li class="active">
+                    <a href="#" onclick="return alertCheck('Management')"> <img src="images/management.png" alt="" width="30" length="30">&nbsp; &nbsp; Management</a>
+                </li>
+            </ul>
+        </div>
+
+
+
+        <!-- Products -->
+
+        <div class="products">
+
+            <!-- Sorting & Filtering -->
+            <div class="products_bar">
+                <div class="section_container">
+                    <div class="container">
+                        <!-- Logout Dropdown -->
+                        <div class="logout_dropdown pull-right">
+                                <button class="btn logout_button dropdown-toggle" type="button" id="logout_dropdownMenuButton"
+                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Welcome!
+                                </button>
+                                <div class="logout_dropdown dropdown-menu" aria-labelledby="logout_dropdownMenuButton">
+                                    <a class="dropdown-item" onclick="logout()">Logout</a>
+                                </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <div class="products_bar_content d-flex flex-column flex-xxl-row align-items-start align-items-xxl-center justify-content-start">
+                                    <div class="product_button" style="display: inline-block" align="left">
+                                        <a href="#addEmployee">Register</a>
+                                    </div>
+                                    <div class="products_bar_side ml-xxl-auto d-flex flex-row align-items-center justify-content-start">
+
+                                        <div class="products_dropdown text-right product_dropdown_filter">
+                                            <div class="isotope_filter_text">
+                                                <span id="getFilter">Search by</span><i class="fa fa-caret-down" aria-hidden="true"></i>
+                                            </div>
+                                            <ul>
+
+                                                <li class="item_filter_btn">Employee No.</li>
+                                                <li class="item_filter_btn">Name</li>
+                                                
+
+                                            </ul>
+                                        </div>
+
+                                        <div class="cntr">
+                                            <div class="cntr-innr">
+                                                <label class="search" for="inpt_search">
+                                                    <input id="inpt_search" type="text" onkeyup="myFunctionEmp(document.getElementById('getFilter').innerText)" />
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section_container">
+                <div class="container">
+                    <div class="row">
+                        <div class="col">
+                            <div class="products_container grid"></div>
+                            <table id="myTable">
+                                <tr>
+                                    <th style="color:black" onclick="sortTableNumber(0)">Employee No.</th>
+                                    <th style="color:black" onclick="sortTable(1)">Name</th>
+                                    <th style="color:black">Position</th>
+                                    
+                                    <th style="color:black">Change</th>
+                                    <th style="color:black">Dismiss</th>
+                                   
+                                </tr>  
+                                <body> 
+                                    <script>
+                                        var db = openDatabase('mydata', '1.0', 'Test DB', 2 * 1024 * 1024);
+    db.transaction(function (tx) {
+        tx.executeSql('SELECT * FROM loginSession', [], function (tx, results) {
+            epos = results.rows.item(0).jobTitle
+            console.log(epos);
+            //var epos = "President";
+    const list = document.querySelector('#myTable');
+    if(epos == "President"){
+        db.transaction(function (tx) {
+            tx.executeSql('SELECT * FROM employees,offices WHERE employees.officeCode = offices.officeCode AND employees.jobTitle != "President"', [], function (tx, results) {
+                var len = results.rows.length, i;
+                for (i = 0; i < len; i++) {
+                    empNo = results.rows.item(i).employeeNumber
+                    fname = results.rows.item(i).firstName
+                    lname = results.rows.item(i).lastName
+                    job = results.rows.item(i).jobTitle
+                    office = results.rows.item(i).officeCode
+                    country = results.rows.item(i).country
+                    city = results.rows.item(i).city
+                    node = `
+                    <tr>
+                        <td  align="center" id="oldnum`+ i + `">` + empNo + `</td>
+                        <td  align="center">` + fname + " " + lname +`</td>
+                        <td  align="center">` + job + `</td>
+                        
+                        
+                        <td> <div class="product_button ml-auto mr-auto "><a href="#update`+ i + `">Update</a></div></button>
+                            
+                        </td>
+                        <td><div class="product_button_red ml-auto mr-auto trans_200" style="display: inline-block"><a href="#delete`+ i + `">dismiss</a></div></td>
+                    </tr>
+                    <div id="update`+ i + `" class="overlay">
+                        <div class="popup">
+                            <h2>Promote/Demote</h2>
+                            <a class="close" href="#">&times;</a>
+                            <h6>First Name</h6>
+                                <input type="text" id="Fname`+ i + `" value="` + fname + `">
+                            <h6>Last Name</h6>
+                                <input type="text" id="Lname`+ i + `" value="` + lname + `">
+                            <h6>Employee No.</h6>
+                                <input type="text" id="codeE` + i + `" value="` + empNo + `">
+                            <h6>Position</h6>
+                            <select id="positionEdit">
+                                <option selected disabled hidden>Choose...</option>
+                                <option value="VP Sales">VP Sales</option>
+                                <option value="VP Marketing">VP Marketing</option>
+                                <option value="Sales Manager (APAC)">Sales Manager (APAC)</option>
+                                <option value="Sale Manager (EMEA)">Sale Manager (EMEA)</option>
+                                <option value="Sales Manager (NA)">Sales Manager (NA)</option>
+                                <option value="Sales Rep">Sales Rep</option>
+                            </select>
+                            <br><br><br>
+                            <div class="product_button_new ml-auto mr-auto trans_200" style="display: inline-block" onclick="updateEmployee(`+ i + `)">
+                                <a href="#">Update</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="delete`+ i + `" class="overlay">
+                        <div class="popup">
+                            <h2>Dismiss Confirmation</h2>
+                            <a class="close" href="#">&times;</a>
+                                <div class="product_button" style="display: inline-block">
+                                    <a href="#">Cancel</a>
+                                </div>
+                                <div class="product_button_red" style="display: inline-block" onclick="dismissEmployee(`+ i + `)">
+                                    <a href="#">Confirm</a>
+                                </div>
+                        </div>
+                    </div>
+                    `;
+                    list.insertAdjacentHTML('beforeend', node)
+                }
+            }, null);
+        });
+    }
+    else if(epos == "VP Sales"){
+        db.transaction(function (tx) {
+            tx.executeSql('SELECT * FROM employees,offices WHERE employees.officeCode = offices.officeCode AND employees.jobTitle != "President" AND employees.jobTitle NOT LIKE "VP%" ', [], function (tx, results) {
+                var len = results.rows.length, i;
+                for (i = 0; i < len; i++) {
+                    empNo = results.rows.item(i).employeeNumber
+                    fname = results.rows.item(i).firstName
+                    lname = results.rows.item(i).lastName
+                    job = results.rows.item(i).jobTitle
+                    office = results.rows.item(i).officeCode
+                    country = results.rows.item(i).country
+                    city = results.rows.item(i).city
+                    node = `
+                    <tr>
+                        <td  align="center" id="oldnum`+ i + `">` + empNo + `</td>
+                        <td  align="center">` + fname + " " + lname +`</td>
+                        <td  align="center">` + job + `</td>
+                        
+                        
+                        <td> <div class="product_button ml-auto mr-auto "><a href="#update`+ i + `">Update</a></div></button>
+                        <td><div class="product_button_red ml-auto mr-auto trans_200" style="display: inline-block"><a href="#delete`+ i + `">dismiss</a></div>
+                         </td>
+                    </tr>
+                    <div id="update`+ i + `" class="overlay">
+                        <div class="popup">
+                            <h2>Promote/Demote</h2>
+                            <a class="close" href="#">&times;</a>
+                            <h6>First Name</h6>
+                                <input type="text" id="Fname`+ i + `" value="` + fname + `">
+                            <h6>Last Name</h6>
+                                <input type="text" id="Lname`+ i + `" value="` + lname + `">
+                            <h6>Employee No.</h6>
+                                <input type="text" id="codeE` + i + `" value="` + empNo + `">
+                            <h6>Position</h6>
+                            <select id="positionEdit">
+                                <option selected disabled hidden>Choose...</option>
+                                <option value="VP Sales">VP Sales</option>
+                                <option value="VP Marketing">VP Marketing</option>
+                                <option value="Sales Manager (APAC)">Sales Manager (APAC)</option>
+                                <option value="Sale Manager (EMEA)">Sale Manager (EMEA)</option>
+                                <option value="Sales Manager (NA)">Sales Manager (NA)</option>
+                                <option value="Sales Rep">Sales Rep</option>
+                            </select>
+                            
+                            <br><br><br>
+                            <div class="product_button_new ml-auto mr-auto trans_200" style="display: inline-block" onclick="updateEmployee(`+ i + `)">
+                            <a href="#">Update</a>
+                        </div>
+                            
+                        </div>
+                    </div>
+                    <div id="delete`+ i + `" class="overlay">
+                        <div class="popup">
+                            <h2>Dismiss Confirmation</h2>
+                            <a class="close" href="#">&times;</a>
+                                <div class="product_button" style="display: inline-block">
+                                    <a href="#">Cancel</a>
+                                </div>
+                                <div class="product_button_red" style="display: inline-block" onclick="dismissEmployee(`+ i + `)">
+                                    <a href="#">Confirm</a>
+                                </div>
+                        </div>
+                    </div>
+                    `;
+                    list.insertAdjacentHTML('beforeend', node)
+                }
+            }, null);
+        });
+    }
+    else if(epos == "VP Marketing"){
+        db.transaction(function (tx) {
+            tx.executeSql('SELECT * FROM employees,offices WHERE employees.officeCode = offices.officeCode AND employees.jobTitle != "President" AND employees.jobTitle NOT LIKE "VP%" ', [], function (tx, results) {
+                var len = results.rows.length, i;
+                for (i = 0; i < len; i++) {
+                    empNo = results.rows.item(i).employeeNumber
+                    fname = results.rows.item(i).firstName
+                    lname = results.rows.item(i).lastName
+                    job = results.rows.item(i).jobTitle
+                    office = results.rows.item(i).officeCode
+                    country = results.rows.item(i).country
+                    city = results.rows.item(i).city
+                    node = `
+                    <tr>
+                        <td  align="center" id="oldnum`+ i + `">` + empNo + `</td>
+                        <td  align="center">` + fname + " " + lname +`</td>
+                        <td  align="center">` + job + `</td>
+                        
+                        
+                        <td> <div class="product_button ml-auto mr-auto "><a href="#update`+ i + `">Update</a></div></button>
+                        <td><div class="product_button_red ml-auto mr-auto trans_200" style="display: inline-block"><a href="#delete`+ i + `">dismiss</a></div>
+                         </td>
+                    </tr>
+                    <div id="update`+ i + `" class="overlay">
+                        <div class="popup">
+                            <h2>Promote/Demote</h2>
+                            <a class="close" href="#">&times;</a>
+                            <h6>First Name</h6>
+                                <input type="text" id="Fname`+ i + `" value="` + fname + `">
+                            <h6>Last Name</h6>
+                                <input type="text" id="Lname`+ i + `" value="` + lname + `">
+                            <h6>Employee No.</h6>
+                                <input type="text" id="codeE` + i + `" value="` + empNo + `">
+                            <h6>Position</h6>
+                            <select id="positionEdit">
+                                <option selected disabled hidden>Choose...</option>
+                                <option value="VP Sales">VP Sales</option>
+                                <option value="VP Marketing">VP Marketing</option>
+                                <option value="Sales Manager (APAC)">Sales Manager (APAC)</option>
+                                <option value="Sale Manager (EMEA)">Sale Manager (EMEA)</option>
+                                <option value="Sales Manager (NA)">Sales Manager (NA)</option>
+                                <option value="Sales Rep">Sales Rep</option>
+                            </select>
+                            
+                            <br><br><br>
+                            <div class="product_button_new ml-auto mr-auto trans_200" style="display: inline-block" onclick="updateEmployee(`+ i + `)">
+                                <a href="#">Update</a>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <div id="delete`+ i + `" class="overlay">
+                        <div class="popup">
+                            <h2>Dismiss Confirmation</h2>
+                            <a class="close" href="#">&times;</a>
+                                <div class="product_button" style="display: inline-block">
+                                    <a href="#">Cancel</a>
+                                </div>
+                                <div class="product_button_red" style="display: inline-block" onclick="dismissEmployee(`+ i + `)">
+                                    <a href="#">Confirm</a>
+                                </div>
+                        </div>
+                    </div>
+                    `;
+                    list.insertAdjacentHTML('beforeend', node)
+                }
+            }, null);
+        });
+    }
+    else if(epos == "Sales Manager (APAC)"){
+        db.transaction(function (tx) {
+            tx.executeSql('SELECT * FROM employees,offices WHERE employees.officeCode = offices.officeCode AND employees.jobTitle != "President" AND employees.jobTitle NOT LIKE "VP%" AND employees.jobTitle NOT LIKE "%Manager%"', [], function (tx, results) {
+                var len = results.rows.length, i;
+                for (i = 0; i < len; i++) {
+                    empNo = results.rows.item(i).employeeNumber
+                    fname = results.rows.item(i).firstName
+                    lname = results.rows.item(i).lastName
+                    job = results.rows.item(i).jobTitle
+                    office = results.rows.item(i).officeCode
+                    country = results.rows.item(i).country
+                    city = results.rows.item(i).city
+                    node = `
+                    <tr>
+                        <td  align="center" id="oldnum`+ i + `">` + empNo + `</td>
+                        <td  align="center">` + fname + " " + lname +`</td>
+                        <td  align="center">` + job + `</td>
+                        
+                        
+                        <td> <div class="product_button ml-auto mr-auto "><a href="#update`+ i + `">Update</a></div></button>
+                        <td><div class="product_button_red ml-auto mr-auto trans_200" style="display: inline-block"><a href="#delete`+ i + `">dismiss</a></div>
+                         </td>
+                    </tr>
+                    <div id="update`+ i + `" class="overlay">
+                        <div class="popup">
+                            <h2>Promote/Demote</h2>
+                            <a class="close" href="#">&times;</a>
+                            <h6>First Name</h6>
+                                <input type="text" id="Fname`+ i + `" value="` + fname + `">
+                            <h6>Last Name</h6>
+                                <input type="text" id="Lname`+ i + `" value="` + lname + `">
+                            <h6>Employee No.</h6>
+                                <input type="text" id="codeE` + i + `" value="` + empNo + `">
+                            <h6>Position</h6>
+                            <select id="positionEdit">
+                                <option selected disabled hidden>Choose...</option>
+                                <option value="VP Sales">VP Sales</option>
+                                <option value="VP Marketing">VP Marketing</option>
+                                <option value="Sales Manager (APAC)">Sales Manager (APAC)</option>
+                                <option value="Sale Manager (EMEA)">Sale Manager (EMEA)</option>
+                                <option value="Sales Manager (NA)">Sales Manager (NA)</option>
+                                <option value="Sales Rep">Sales Rep</option>
+                            </select>
+                            
+                            <br><br><br>
+                            <div class="product_button_new ml-auto mr-auto trans_200" style="display: inline-block" onclick="updateEmployee(`+ i + `)">
+                                <a href="#">Update</a>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <div id="delete`+ i + `" class="overlay">
+                        <div class="popup">
+                            <h2>Dismiss Confirmation</h2>
+                            <a class="close" href="#">&times;</a>
+                                <div class="product_button" style="display: inline-block">
+                                    <a href="#">Cancel</a>
+                                </div>
+                                <div class="product_button_red" style="display: inline-block" onclick="dismissEmployee(`+ i + `)">
+                                    <a href="#">Confirm</a>
+                                </div>
+                        </div>
+                    </div>
+                    `;
+                    list.insertAdjacentHTML('beforeend', node)
+                }
+            }, null);
+        });
+    }
+    else if(epos == "Sales Manager (EMEA)"){
+        db.transaction(function (tx) {
+            tx.executeSql('SELECT * FROM employees,offices WHERE employees.officeCode = offices.officeCode AND employees.jobTitle != "President" AND employees.jobTitle NOT LIKE "VP%" AND employees.jobTitle NOT LIKE "%Manager%"', [], function (tx, results) {
+                var len = results.rows.length, i;
+                for (i = 0; i < len; i++) {
+                    empNo = results.rows.item(i).employeeNumber
+                    fname = results.rows.item(i).firstName
+                    lname = results.rows.item(i).lastName
+                    job = results.rows.item(i).jobTitle
+                    office = results.rows.item(i).officeCode
+                    country = results.rows.item(i).country
+                    city = results.rows.item(i).city
+                    node = `
+                    <tr>
+                        <td  align="center" id="oldnum`+ i + `">` + empNo + `</td>
+                        <td  align="center">` + fname + " " + lname +`</td>
+                        <td  align="center">` + job + `</td>
+                        
+                        
+                        <td> <div class="product_button ml-auto mr-auto "><a href="#update`+ i + `">Update</a></div></button>
+                        <td><div class="product_button_red ml-auto mr-auto trans_200" style="display: inline-block"><a href="#delete`+ i + `">dismiss</a></div>
+                         </td>
+                    </tr>
+                    <div id="update`+ i + `" class="overlay">
+                        <div class="popup">
+                            <h2>Promote/Demote</h2>
+                            <a class="close" href="#">&times;</a>
+                            <h6>First Name</h6>
+                                <input type="text" id="Fname`+ i + `" value="` + fname + `">
+                            <h6>Last Name</h6>
+                                <input type="text" id="Lname`+ i + `" value="` + lname + `">
+                            <h6>Employee No.</h6>
+                                <input type="text" id="codeE` + i + `" value="` + empNo + `">
+                            <h6>Position</h6>
+                            <select id="positionEdit">
+                                <option selected disabled hidden>Choose...</option>
+                                <option value="VP Sales">VP Sales</option>
+                                <option value="VP Marketing">VP Marketing</option>
+                                <option value="Sales Manager (APAC)">Sales Manager (APAC)</option>
+                                <option value="Sale Manager (EMEA)">Sale Manager (EMEA)</option>
+                                <option value="Sales Manager (NA)">Sales Manager (NA)</option>
+                                <option value="Sales Rep">Sales Rep</option>
+                            </select>
+
+                            <br><br><br>
+                            <div class="product_button_new ml-auto mr-auto trans_200" style="display: inline-block" onclick="updateEmployee(`+ i + `)">
+                                <a href="#">Update</a>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <div id="delete`+ i + `" class="overlay">
+                        <div class="popup">
+                            <h2>Dismiss Confirmation</h2>
+                            <a class="close" href="#">&times;</a>
+                                <div class="product_button" style="display: inline-block">
+                                    <a href="#">Cancel</a>
+                                </div>
+                                <div class="product_button_red" style="display: inline-block" onclick="dismissEmployee(`+ i + `)">
+                                    <a href="#">Confirm</a>
+                                </div>
+                        </div>
+                    </div>
+                    `;
+                    list.insertAdjacentHTML('beforeend', node)
+                }
+            }, null);
+        });
+    }
+    else if(epos == "Sales Manager (NA)"){
+        db.transaction(function (tx) {
+            tx.executeSql('SELECT * FROM employees,offices WHERE employees.officeCode = offices.officeCode AND employees.jobTitle != "President" AND employees.jobTitle NOT LIKE "VP%" AND employees.jobTitle NOT LIKE "%Manager%"', [], function (tx, results) {
+                var len = results.rows.length, i;
+                for (i = 0; i < len; i++) {
+                    empNo = results.rows.item(i).employeeNumber
+                    fname = results.rows.item(i).firstName
+                    lname = results.rows.item(i).lastName
+                    job = results.rows.item(i).jobTitle
+                    office = results.rows.item(i).officeCode
+                    country = results.rows.item(i).country
+                    city = results.rows.item(i).city
+                    node = `
+                    <tr>
+                        <td  align="center" id="oldnum`+ i + `">` + empNo + `</td>
+                        <td  align="center">` + fname + " " + lname +`</td>
+                        <td  align="center">` + job + `</td>
+                        
+                        
+                        <td> <div class="product_button ml-auto mr-auto "><a href="#update`+ i + `">Update</a></div></button>
+                        <td><div class="product_button_red ml-auto mr-auto trans_200" style="display: inline-block"><a href="#delete`+ i + `">dismiss</a></div>
+                         </td>
+                    </tr>
+                    <div id="update`+ i + `" class="overlay">
+                        <div class="popup">
+                            <h2>Promote/Demote</h2>
+                            <a class="close" href="#">&times;</a>
+                            <h6>First Name</h6>
+                                <input type="text" id="Fname`+ i + `" value="` + fname + `">
+                            <h6>Last Name</h6>
+                                <input type="text" id="Lname`+ i + `" value="` + lname + `">
+                            <h6>Employee No.</h6>
+                                <input type="text" id="codeE` + i + `" value="` + empNo + `">
+                            <h6>Position</h6>
+                            <select id="positionEdit">
+                                <option selected disabled hidden>Choose...</option>
+                                <option value="VP Sales">VP Sales</option>
+                                <option value="VP Marketing">VP Marketing</option>
+                                <option value="Sales Manager (APAC)">Sales Manager (APAC)</option>
+                                <option value="Sale Manager (EMEA)">Sale Manager (EMEA)</option>
+                                <option value="Sales Manager (NA)">Sales Manager (NA)</option>
+                                <option value="Sales Rep">Sales Rep</option>
+                            </select>
+                            
+                            <br><br><br>
+                            <div class="product_button_new ml-auto mr-auto trans_200" style="display: inline-block" onclick="updateEmployee(`+ i + `)">
+                                <a href="#">Update</a>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <div id="delete`+ i + `" class="overlay">
+                        <div class="popup">
+                            <h2>Dismiss Confirmation</h2>
+                            <a class="close" href="#">&times;</a>
+                                <div class="product_button" style="display: inline-block">
+                                    <a href="#">Cancel</a>
+                                </div>
+                                <div class="product_button_red" style="display: inline-block" onclick="dismissEmployee(`+ i + `)">
+                                    <a href="#">Confirm</a>
+                                </div>
+                        </div>
+                    </div>
+                    `;
+                    list.insertAdjacentHTML('beforeend', node)
+                }
+            }, null);
+        });
+    }
+    else if(epos == "Sales Rep"){
+        db.transaction(function (tx) {
+            tx.executeSql('SELECT * FROM employees', [], function (tx, results) {
+                var len = results.rows.length, i;
+                for (i = 0; i < len; i++) {
+                    empNo = results.rows.item(i).employeeNumber
+                    fname = results.rows.item(i).firstName
+                    lname = results.rows.item(i).lastName
+                    job = results.rows.item(i).jobTitle
+                    office = results.rows.item(i).officeCode
+                    
+                    node = `
+                                                    <tr>
+                                                        <td  align="center" id="oldnum`+ i + `">` + empNo + `</td>
+                                                        <td  align="center">` + fname + " " + lname +`</td>
+                                                        <td  align="center">` + job + `</td>
+                                                        
+                                                        
+                                                        <td> <div class="product_button ml-auto mr-auto "><a href="#`+ i + `">Not Allowed</a></div></button>
+                                                        <td><div class="product_button_red ml-auto mr-auto trans_200" style="display: inline-block"><a href="#">Not Allowed</a></div>
+                                                            </td>
+                                                    </tr>
+                                                    <div id="update`+ i + `" class="overlay">
+                                                        <div class="popup">
+                                                            <h2>Promote/Demote</h2>
+                                                            <a class="close" href="#">&times;</a>
+                                                            <h6>First Name</h6>
+                                                                <input type="text" id="Fname`+ i + `" value="` + fname + `">
+                                                            <h6>Last Name</h6>
+                                                                <input type="text" id="Lname`+ i + `" value="` + lname + `">
+                                                            <h6>Employee No.</h6>
+                                                                <input type="text" id="codeE` + i + `" value="` + empNo + `">
+                                                            <h6>Position</h6>
+                                                            <select id="positionEdit">
+                                                                <option selected disabled hidden>Choose...</option>
+                                                                <option value="VP Sales">VP Sales</option>
+                                                                <option value="VP Marketing">VP Marketing</option>
+                                                                <option value="Sales Manager (APAC)">Sales Manager (APAC)</option>
+                                                                <option value="Sale Manager (EMEA)">Sale Manager (EMEA)</option>
+                                                                <option value="Sales Manager (NA)">Sales Manager (NA)</option>
+                                                                <option value="Sales Rep">Sales Rep</option>
+                                                            </select>
+                                                            
+                                                            <br><br><br>
+                                                            <div class="product_button_new ml-auto mr-auto trans_200" style="display: inline-block" onclick="updateEmployee(`+ i + `)">
+                                                                <a href="#">Update</a>
+                                                            </div>
+                                                            
+                                                        </div>
+                                                    </div>
+                                                    <div id="delete`+ i + `" class="overlay">
+                                                        <div class="popup">
+                                                            <h2>Dismiss Confirmation</h2>
+                                                            <a class="close" href="#">&times;</a>
+                                                                <div class="product_button" style="display: inline-block">
+                                                                    <a href="#">Cancel</a>
+                                                                </div>
+                                                                <div class="product_button_red" style="display: inline-block" onclick="dismissEmployee(`+ i + `)">
+                                                                    <a href="#">Confirm</a>
+                                                                </div>
+                                                        </div>
+                                                    </div>
+                                                    `;
+                                                    list.insertAdjacentHTML('beforeend', node)
+                                                }
+                                            }, null);
+                                        });
+                                        }
+                                        }, null);
+                                        });
+                                    </script>
+                                </body>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="addEmployee" class="overlay">
+            <div class="popup">
+                <h2>Employee Registration</h2>
+                <a class="close" href="#">&times;</a>
+                <h6>First Name: <input type="text" id="fnameA"></h6>
+                <br> 
+                <h6>Last Name: <input type="text" id="lnameA"></h6>
+                <br>  
+                <h6>Employee Number: <input type="text" id="empNoA"></h6>
+                <br>  
+                <h6>Extension: <input type="text" id="exA"></h6>
+                <br>   
+                <h6>Email: <input type="email" id="emailA"></h6>
+                <br>    
+                <h6>Report to: <input type="text" id="reportA"></h6>
+                <br>   
+                <h6>Position: </h6>
+                <select id="positionEdit">
+                    <option selected disabled hidden>Choose...</option>
+                    <option value="VP Sales">VP Sales</option>
+                    <option value="VP Marketing">VP Marketing</option>
+                    <option value="Sales Manager (APAC)">Sales Manager (APAC)</option>
+                    <option value="Sale Manager (EMEA)">Sale Manager (EMEA)</option>
+                    <option value="Sales Manager (NA)">Sales Manager (NA)</option>
+                    <option value="Sales Rep">Sales Rep</option>
+                </select>
+                <br>
+                <h6>Station: <input type="text" id="officeA"></h6>
+                    
+                <br>
+                <div class="product_button_new ml-auto mr-auto trans_200" style="display: inline-block" onclick="addEmployee()">
+                    <a href="#">Register</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="styles/bootstrap-4.1.3/popper.js"></script>
+    <script src="styles/bootstrap-4.1.3/bootstrap.min.js"></script>
+    <script src="plugins/greensock/TweenMax.min.js"></script>
+    <script src="plugins/greensock/TimelineMax.min.js"></script>
+    <script src="plugins/scrollmagic/ScrollMagic.min.js"></script>
+    <script src="plugins/greensock/animation.gsap.min.js"></script>
+    <script src="plugins/greensock/ScrollToPlugin.min.js"></script>
+    <script src="plugins/OwlCarousel2-2.2.1/owl.carousel.js"></script>
+    <script src="plugins/easing/easing.js"></script>
+    <script src="plugins/parallax-js-master/parallax.min.js"></script>
+    <script src="plugins/Isotope/isotope.pkgd.min.js"></script>
+    <script src="plugins/Isotope/fitcolumns.js"></script>
+    <script src="js/categories.js"></script>
+    <script src="js/function.js"></script>
+    <script src="js/search_bar.js"></script>
+    <script src="js/logout.js"></script>
+</body>
+
+</html>

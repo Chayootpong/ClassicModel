@@ -1,0 +1,346 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Classic Model Shop</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="aStar Fashion Template Project">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="styles/bootstrap-4.1.3/bootstrap.css">
+    <link href="plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/owl.carousel.css">
+    <link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/owl.theme.default.css">
+    <link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/animate.css">
+    <link rel="stylesheet" type="text/css" href="styles/cart.css">
+    <link rel="stylesheet" type="text/css" href="styles/cart_responsive.css">
+    <link rel="stylesheet" type="text/css" href="styles/categories.css">
+
+    <link rel="stylesheet" type="text/css" href="styles/search_bar.css">
+    <link rel="stylesheet" type="text/css" href="styles/side_bar.css">
+    <link rel="stylesheet" type="text/css" href="css/payment.css">
+
+    <link rel="icon" href="https://icon-library.net/images/3d-model-icon/3d-model-icon-24.jpg" type="image/x-icon" />
+
+</head>
+
+<body onload="login_onLoad(); showPayment(); checkCustomerCart(); getMBSP(); ">
+
+    <div class="super_container">
+
+        <!-- Menu -->
+
+        <div class="menu d-flex flex-column align-items-start justify-content-start menu_mm trans_400">
+            <div class="menu_close_container">
+                <div class="menu_close">
+                    <div></div>
+                    <div></div>
+                </div>
+            </div>
+            <div class="menu_top d-flex flex-row align-items-center justify-content-start">
+
+                <!-- Language -->
+                <div class="info_languages has_children">
+                    <div class="language_flag">
+                        <img src="images/flag_1.svg" alt="https://www.flaticon.com/authors/freepik">
+                    </div>
+                    <div class="dropdown_text">english</div>
+                    <div class="dropdown_arrow"><i class="fa fa-angle-down" aria-hidden="true"></i></div>
+
+                    <!-- Language Dropdown Menu -->
+                    <ul>
+                        <li>
+                            <a href="#">
+                                <div class="language_flag">
+                                    <img src="images/flag_2.svg" alt="https://www.flaticon.com/authors/freepik">
+                                </div>
+                                <div class="dropdown_text">french</div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <div class="language_flag">
+                                    <img src="images/flag_3.svg" alt="https://www.flaticon.com/authors/freepik">
+                                </div>
+                                <div class="dropdown_text">japanese</div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <div class="language_flag">
+                                    <img src="images/flag_4.svg" alt="https://www.flaticon.com/authors/freepik">
+                                </div>
+                                <div class="dropdown_text">russian</div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <div class="language_flag">
+                                    <img src="images/flag_5.svg" alt="https://www.flaticon.com/authors/freepik">
+                                </div>
+                                <div class="dropdown_text">spanish</div>
+                            </a>
+                        </li>
+                    </ul>
+
+                </div>
+
+                <!-- Currency -->
+                <div class="info_currencies has_children">
+                    <div class="dropdown_text">usd</div>
+                    <div class="dropdown_arrow"><i class="fa fa-angle-down" aria-hidden="true"></i></div>
+
+                    <!-- Currencies Dropdown Menu -->
+                    <ul>
+                        <li>
+                            <a href="#">
+                                <div class="dropdown_text">EUR</div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <div class="dropdown_text">YEN</div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <div class="dropdown_text">GBP</div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <div class="dropdown_text">CAD</div>
+                            </a>
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+
+            <div class="menu_search">
+                <form action="#" class="header_search_form menu_mm">
+                    <input type="search" class="search_input menu_mm" placeholder="Search" required="required">
+                    <button class="header_search_button d-flex flex-column align-items-center justify-content-center menu_mm">
+                        <i class="fa fa-search menu_mm" aria-hidden="true"></i>
+                    </button>
+                </form>
+            </div>
+            <nav class="menu_nav">
+                <ul class="menu_mm">
+                    <li class="menu_mm"><a href="index.html">home</a></li>
+                    <li class="menu_mm"><a href="categories.html">catalog</a></li>
+                    <li class="menu_mm"><a href="customer.html">membership</a></li>
+                    <li class="menu_mm"><a href="#">order status</a></li>
+                    <li class="menu_mm"><a href="blog.html">blog</a></li>
+                    <li class="menu_mm"><a href="contact.html">contact</a></li>
+                </ul>
+            </nav>
+            <div class="menu_extra">
+                <div class="menu_social">
+                    <ul>
+                        <li><a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
+                        <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                        <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                        <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sidebar -->
+
+        <div class="sidebar">
+
+            <!-- Logo -->
+            <div class="sidebar_logo">
+                <img src="images/Logo.png" alt="" width="200" length="200">
+            </div>
+
+            <ul class="list-unstyled components">
+                <li>
+                    <a href="#" onclick="return alertCheck('Finding')">
+                        <img src="images/fiding.png" alt="" width="30"
+                             length="30">&nbsp; &nbsp; Finding
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#" onclick="return alertCheck('Cart')">
+                        <img src="images/cart.png" alt="" width="30"
+                             length="30">&nbsp; &nbsp; Cart
+                    </a>
+                </li>
+
+                <li class="active">
+                    <a href="#" onclick="return alertCheck('Payment')">
+                        <img src="images/payment.png" alt="" width="30"
+                             length="30">&nbsp; &nbsp; Payment
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#" onclick="return alertCheck('Order_Status')">
+                        <img src="images/order status.png" alt=""
+                             width="30" length="30">&nbsp; &nbsp; Order Status
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#" onclick="return alertCheck('Membership')">
+                        <img src="images/membership.png" alt=""
+                             width="30" length="30">&nbsp; &nbsp; Membership
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#" onclick="return alertCheck('Register')">
+                        <img src="images/register.png" alt=""
+                             width="30" length="30">&nbsp; &nbsp; Register
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#" onclick="return alertCheck('Stocking')">
+                        <img src="images/stocking.png" alt=""
+                             width="30" length="30">&nbsp; &nbsp; Stocking
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#" onclick="return alertCheck('Promotion')">
+                        <img src="images/promotion.png" alt=""
+                             width="30" length="30">&nbsp; &nbsp; Promotion
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#" onclick="return alertCheck('Management')">
+                        <img src="images/management.png" alt=""
+                             width="30" length="30">&nbsp; &nbsp; Management
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="products_bar">
+            <div class="section_container">
+                <div class="container">
+                    <!-- Logout Dropdown -->
+                    <div class="logout_dropdown pull-right">
+                        <button class="btn logout_button dropdown-toggle" type="button" id="logout_dropdownMenuButton"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Welcome!
+                        </button>
+                        <div class="logout_dropdown dropdown-menu" aria-labelledby="logout_dropdownMenuButton">
+                            <a class="dropdown-item" onclick="logout()">Logout</a>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <div class="products_bar_content d-flex flex-column flex-xxl-row align-items-start align-items-xxl-center justify-content-start">
+                                <div class="products_bar_side ml-xxl-auto d-flex flex-row align-items-center justify-content-start">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="cart_section">
+            <div class="section_container">
+                <div class="container">
+                    <h3>Order ID: &nbsp;<span id="orderPayment">12345</span></h3>
+                    <div> &nbsp; </div>
+                    <h3 id="headName">Hello</h3>
+                    <div style="display:none" id="codeEIEI"></div>
+                    <h4 align="right"> MBSP : <span id="mbsppt">15147</span> (+<span id="mbspadd">123</span>) pts.</h4>
+                    <div class="row">
+                        <div class="col">
+                            <div class="cart_container">
+
+                                <!-- Cart Bar -->
+                                <div class="cart_bar">
+                                    <ul class="cart_bar_list item_list d-flex flex-row align-items-center justify-content-start">
+                                        <li>Product</li>
+                                        <li>Code</li>
+                                        <li>Scale</li>
+                                        <li>Price</li>
+                                        <li>Quantity</li>
+                                        <li>Total</li>
+                                    </ul>
+                                </div>
+
+                                <!-- Payment/Cart Items -->
+                                <div class="cart_items">
+                                    <div class="cart_items_list" id="payv">
+
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="form-style-6">
+                        <h1>Order Description</h1>
+                        <h3>Total price : <span id="tprice" style="color: limegreen;"></span></h3>
+                        <h3>Coupon/Discount price : <span id="tdiscount" style="color: limegreen;"></span></h3>
+                        <h3>Money cheque : </h3><span>
+                            <input type="text" name="checkNumber" value=""
+                                   placeholder="Money cheque" required id="checkNumber" />
+                        </span>
+
+                        <h3>Address : <span id="addr" style="color: limegreen;"></span></h3>
+                        <br>
+                        <h3>Preferred shipping date : </h3>
+                        <input type="date" class="DateFrom" name="requireddate" value="" placeholder="dd-mm-yyyy" required id="requireddate">
+                        <h3>Comments : </h3>
+                        <textarea name="comments" placeholder="Comments" value="" id="comments"></textarea>
+
+                        <!-- Payment Buttons -->
+                        <div class="cart_buttons d-flex flex-row align-items-start justify-content-start">
+                            <div class="cart_buttons_inner ml-auto d-flex flex-row align-items-start justify-content-start flex-wrap">
+                                <div class="button button_continue trans_200 service">
+                                    <a href="#" onclick="haveMoney();">
+                                        Confirm
+                                        Payment
+                                    </a>
+                                </div>
+                                <div class="button button_clear trans_200">
+                                    <a href="#"
+                                       onclick="dropCart(); dropPayment(); return alertCheck('Membership');">Cancelled</a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+        <script src="js/jquery-3.2.1.min.js"></script>
+        <script src="styles/bootstrap-4.1.3/popper.js"></script>
+        <script src="styles/bootstrap-4.1.3/bootstrap.min.js"></script>
+        <script src="plugins/greensock/TweenMax.min.js"></script>
+        <script src="plugins/greensock/TimelineMax.min.js"></script>
+        <script src="plugins/scrollmagic/ScrollMagic.min.js"></script>
+        <script src="plugins/greensock/animation.gsap.min.js"></script>
+        <script src="plugins/greensock/ScrollToPlugin.min.js"></script>
+        <script src="plugins/OwlCarousel2-2.2.1/owl.carousel.js"></script>
+        <script src="plugins/easing/easing.js"></script>
+        <script src="plugins/parallax-js-master/parallax.min.js"></script>
+        <script src="plugins/Isotope/isotope.pkgd.min.js"></script>
+        <script src="plugins/Isotope/fitcolumns.js"></script>
+        <script src="js/categories.js"></script>
+        <script src="js/function.js"></script>
+        <script src="js/search_bar.js"></script>
+        <script src="tableCSS/js/main.js"></script>
+        <script src="js/logout.js"></script>
+        <script src="js/cart.js"></script>
+
+</body>
+
+</html>

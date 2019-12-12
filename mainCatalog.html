@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-	<title>Categories</title>
+	<title>Catalog</title>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="description" content="aStar Fashion Template Project">
@@ -33,12 +33,9 @@
                 <!-- Navigation -->
                 <nav class="header_nav">
                     <ul class="d-flex flex-row align-items-center justify-content-start">
-                        <li><a href="index.html">home</a></li>
-                        <li><a href="#">woman</a></li>
-                        <li><a href="#">man</a></li>
-                        <li><a href="#">lookbook</a></li>
-                        <li><a href="#">blog</a></li>
-                        <li><a href="#">contact</a></li>
+                        <li><a href="#">home</a></li>
+                      
+                        
                     </ul>
                 </nav>
 
@@ -246,12 +243,8 @@
             </div>
             <nav class="menu_nav">
                 <ul class="menu_mm">
-                    <li class="menu_mm"><a href="index.html">home</a></li>
-                    <li class="menu_mm"><a href="#">woman</a></li>
-                    <li class="menu_mm"><a href="#">man</a></li>
-                    <li class="menu_mm"><a href="#">lookbook</a></li>
-                    <li class="menu_mm"><a href="blog.html">blog</a></li>
-                    <li class="menu_mm"><a href="contact.html">contact</a></li>
+                    <li class="menu_mm"><a href="#">catalog</a></li>
+                    
                 </ul>
             </nav>
             <div class="menu_extra">
@@ -314,10 +307,10 @@
                  data-image-src="images/banner1.jpg" data-speed="0.8"></div>
             <div class="home_container">
                 <div class="home_content">
-                    <div class="home_title">G10</div>
+                    <div class="home_title" style="color: aliceblue;">G10</div>
                     <div class="breadcrumbs">
                         <ul class="d-flex flex-row align-items-center justify-content-start">
-                            <li><a href="index.html">Home</a></li>
+                            <li><a href="#" >Catalog</a></li>
                             
                         </ul>
                     </div>
@@ -336,14 +329,6 @@
                         <div class="row">
                             <div class="col">
                                 <div class="products_bar_content d-flex flex-column flex-xxl-row align-items-start align-items-xxl-center justify-content-start">
-                                    <div class="product_categories">
-                                        <ul class="d-flex flex-row align-items-start justify-content-start flex-wrap">
-                                            <li class="active"><a href="#">All</a></li>
-                                            <li><a href="#">Hot Products</a></li>
-                                            <li><a href="#">New Products</a></li>
-                                            <li><a href="#">Sale Products</a></li>
-                                        </ul>
-                                    </div>
                                     <div class="products_bar_side ml-xxl-auto d-flex flex-row align-items-center justify-content-start">
                                         <div class="products_dropdown product_dropdown_sorting">
                                             <div class="isotope_sorting_text">
@@ -359,8 +344,45 @@
                                                 </li>
                                             </ul>
                                         </div>
-            
-                                        <div class="products_dropdown text-right product_dropdown_filter">
+                                    <div>
+                                        <h6>Scale</h6>
+                                        <select id="scale_filter" onchange="scaleFilter()">
+                                            <option selected="selected" value="All">All</option>
+                                            <option value="1:10">1:10</option>
+                                            <option value="1:12">1:12</option>
+                                            <option value="1:18">1:18</option>
+                                            <option value="1:24">1:24</option>
+                                            <option value="1:32">1:32</option>
+                                            <option value="1:50">1:50</option>
+                                            <option value="1:72">1:72</option>
+                                            <option value="1:700">1:700</option>
+                                        </select>
+                                        <h6>Vendor</h6>
+                                        <select id="vendor_filter" onchange="scaleFilter()">
+                                            <option value="All">All</option>
+                                            <option value="Autoart Studio Design">Autoart Studio Design</option>
+                                            <option value="Carousel DieCast Legends">Carousel DieCast Legends</option>
+                                            <option value="Classic Metal Creations">Classic Metal Creations</option>
+                                            <option value="Exoto Designs">Exoto Designs</option>
+                                            <option value="Gearbox Collectibles">Gearbox Collectibles</option>
+                                            <option value="Highway 66 Mini Classics">Highway 66 Mini Classics</option>
+                                            <option value="Min Lin Diecast">Min Lin Diecast</option>
+                                            <option value="Motor City Art Classics">Motor City Art Classics</option>
+                                            <option value="Red Start Diecast">Red Start Diecast</option>
+                                            <option value="Second Gear Diecast">Second Gear Diecast</option>
+                                            <option value="Studio M Art Models">Studio M Art Models</option>
+                                            <option value="Unimax Art Galleries">Unimax Art Galleries</option>
+                                            <option value="Welly Diecast Productions">Welly Diecast Productions</option>
+                                        </select>
+                                        &emsp;&emsp;&emsp;&emsp;
+                                    </div>
+                                    <div><button class="product_button_new" id="autoQuery" type="submit" onclick="scaleFilter()">APPLY</button></div>
+                                    <script>
+                                        window.onload=function(){
+                                        document.getElementById("autoQuery").click();
+                                        };
+                                    </script>
+                                        <!-- <div class="products_dropdown text-right product_dropdown_filter">
                                             <div class="isotope_filter_text">
                                                 <span>Scale</span><i class="fa fa-caret-down" aria-hidden="true"></i>
                                             </div>
@@ -397,7 +419,7 @@
                                                 <li class="item_filter_btn" data-filter=".cdl">Carousel DieCast Legends</li>
                                                 <li class="item_filter_btn" data-filter=".asd">Autoart Studio Design</li>
                                             </ul>
-                                        </div>
+                                        </div> -->
                                         
                                     </div>
                                 </div>
@@ -410,109 +432,101 @@
                 <div class="container">
                     <div class="row">
                         <div class="col">
-                            <div class="products_container grid" id="div1">
+                            <div class="products_container grid" id="div1" onload="scaleFilter()">
+                                
+                                    
+                               
 
-                                <script>
+                                <!-- <script>
                                     var db = openDatabase('mydata', '1.0', 'Test DB', 2 * 1024 * 1024);
-    let msg = "";
-    var e = '';
-    const list = document.querySelector('#div1');
-
-    db.transaction(function (tx) {
-        tx.executeSql('SELECT * FROM products', [], function (tx, results) {
-            var len = results.rows.length, i;
-            for (i = 0; i < len; i++) {
-                msg = results.rows.item(i).productName
-                msg2 = results.rows.item(i).productCode
-                msg3 = results.rows.item(i).productLine
-                msg4 = results.rows.item(i).productScale
-                vendor = results.rows.item(i).productVendor
-                price = results.rows.item(i).buyPrice
-                if (msg4 == "1:10") {
-                    scale = "oneo";
-                } else if (msg4 == "1:12") {
-                    scale = "onetwo";
-                } else if (msg4 == "1:18") {
-                    scale = "oneeight";
-                } else if (msg4 == "1:24") {
-                    scale = "twofour";
-                } else if (msg4 == "1:32") {
-                    scale = "threetwo";
-                } else if (msg4 == "1:50") {
-                    scale = "fiveo";
-                } else if (msg4 == "1:72") {
-                    scale = "seventwo";
-                } else {
-                    scale = "sevenoo";
-                }
-                if (vendor == "Welly Diecast Productions") {
-                    vendor_fill = "wdp";
-                } else if (vendor == "Unimax Art Galleries") {
-                    vendor_fill = "uag";
-                } else if (vendor == "Studio M Art Models") {
-                    vendor_fill = "sma";
-                } else if (vendor == "Second Gear Diecast") {
-                    vendor_fill = "sgd";
-                } else if (vendor == "Red Start Diecast") {
-                    vendor_fill = "rsd";
-                } else if (vendor == "Motor City Art Classics") {
-                    vendor_fill = "mca";
-                } else if (vendor == "Min Lin Diecast") {
-                    vendor_fill = "mld";
-                } else if (vendor == "Highway 66 Mini Classics") {
-                    vendor_fill = "hmc";
-                } else if (vendor == "Gearbox Collectibles") {
-                    vendor_fill = "gc";
-                } else if (vendor == "Exoto Designs") {
-                    vendor_fill = "ed";
-                } else if (vendor == "Classic Metal Creations") {
-                    vendor_fill = "cmc";
-                } else if (vendor == "Carousel DieCast Legends") {
-                    vendor_fill = "cdl";
-                } else {
-                    vendor_fill = "asd";
-                }
-                console.log(msg4);
-                console.log(vendor_fill);
-                list.innerHTML += `
-                                                <div class="product grid-item`+ " " + scale + " " + vendor_fill + `">
-                                                    <div class="product_inner">
-                                                    
-                                                        <div class="product_image">
-                                                            <img src="images/lambo.jpg" alt="">
-                                                                
-                                                            
-                                                                <div class="product_tag">` + msg4 + `</div>
-                                                            </div>
-                                                            <div class="product_content text-center">
-                                                                <div class="text_box">
-                                                                    <div class="product_title" id="XXXX" ><a href="product.html">` + msg + `</a></div>
-                                                            </div>
-                                                            <div>
-                                                            <ul align='left' >
-                                                                <li><span>Code: </span> 
-                                                                ` + msg2 + ` </li>
-                                                                <li><span>Category: </span> 
-                                                                ` + msg3 + ` </li>
-                                                                <li><span>Vendor: </span> 
-                                                                ` + vendor + ` </li>
-                                                                <li class="product_price"> 
-                                                               $`  + price + ` </li>
-                                                            
+                                    var sfilter = scaleFilter();
+                                    console.log(sfilter);
+                                    var vfilter = vendorFilter();
+                                    console.log(vfilter);
+                                    let msg = "";
+                                    var e = '';
+                                    const list = document.querySelector('#div1');
+                                    if (sfilter == "All" && vfilter == "All"){
+                                        db.transaction(function (tx) {
+                                    tx.executeSql('SELECT * FROM products ', [], function (tx, results) {
+                                        var len = results.rows.length, i;
+                                        for (i = 0; i < len; i++) {
+                                            msg = results.rows.item(i).productName
+                                            msg2 = results.rows.item(i).productCode
+                                            msg3 = results.rows.item(i).productLine
+                                            msg4 = results.rows.item(i).productScale
+                                            msg5 = results.rows.item(i).productDescription
+                                            msg6 = results.rows.item(i).quantityInStock
+                                            msg7 = results.rows.item(i).buyPrice
+                                            msg8 = results.rows.item(i).MSRP
+                                            const list = document.querySelector('#div1');
+                                            list.innerHTML += `
+                                                <div class="product grid-item sale" id="bigProduct`+ i + `" style="display: inline-block">
+                                                <div class="product_inner" id="inner` + i + `">
+                                                    <div class="product_image">
+                                                        <img src="images/lambo.jpg" alt="">
+                                                            <div class="product_tag" id="sc`+i+`">` + msg4 + `</div>
+                                                    </div>
+                                                    <div class="product_content text-center">
+                                                        <div class="text_box">
+                                                            <div class="product_title" id="XXXX" ><a href="product.html">` + msg + `</a></div>
+                                                        </div>
+                                                        <div>
+                                                            <ul align='left'>
+                                                                <li><span>Code: </span><span id="codeOP`+ i + `">` + msg2 + `</span></li>
+                                                                <li><span>Catagory: </span><span id="catt`+ i + `">` + msg3 + `</span></li>
                                                             </ul>
-                                                            
-                                                            </div>
-                        
-            
+                                                        </div>
                         
                                                         </div>
                                                     </div>
                                                 </div>`;
-            }
+                                            }
 
-        }, null);
-    });
-                                </script>
+                                        }, null);
+                                    });
+                                    }else{
+                                        db.transaction(function (tx) {
+                                    tx.executeSql('SELECT * FROM products ', [], function (tx, results) {
+                                        var len = results.rows.length, i;
+                                        for (i = 0; i < len; i++) {
+                                            msg = results.rows.item(i).productName
+                                            msg2 = results.rows.item(i).productCode
+                                            msg3 = results.rows.item(i).productLine
+                                            msg4 = results.rows.item(i).productScale
+                                            msg5 = results.rows.item(i).productDescription
+                                            msg6 = results.rows.item(i).quantityInStock
+                                            msg7 = results.rows.item(i).buyPrice
+                                            msg8 = results.rows.item(i).MSRP
+                                            const list = document.querySelector('#div1');
+                                            list.innerHTML += `
+                                                <div class="product grid-item sale" id="bigProduct`+ i + `" style="display: inline-block">
+                                                <div class="product_inner" id="inner` + i + `">
+                                                    <div class="product_image">
+                                                        <img src="images/lambo.jpg" alt="">
+                                                            <div class="product_tag" id="sc`+i+`">` + msg4 + `</div>
+                                                    </div>
+                                                    <div class="product_content text-center">
+                                                        <div class="text_box">
+                                                            <div class="product_title" id="XXXX" ><a href="product.html">` + msg + `</a></div>
+                                                        </div>
+                                                        <div>
+                                                            <ul align='left'>
+                                                                <li><span>Code: </span><span id="codeOP`+ i + `">` + msg2 + `</span></li>
+                                                                <li><span>Catagory: </span><span id="catt`+ i + `">` + msg3 + `</span></li>
+                                                            </ul>
+                                                        </div>
+                        
+                                                        </div>
+                                                    </div>
+                                                </div>`;
+                                            }
+
+                                        }, null);
+                                    });
+                                    }
+                                    
+                                </script> -->
 
                             </div>
                         </div>
@@ -523,27 +537,7 @@
 
        
 
-            <!-- Credits -->
-            <div class="credits">
-                <div class="section_container">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col">
-                                <div class="credits_content d-flex flex-row align-items-center justify-content-end">
-                                    <div class="credits_text">
-                                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                                        Copyright &copy;
-                                        <script>document.write(new Date().getFullYear());</script> All rights reserved |
-                                        This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by
-                                        <a href="https://colorlib.com" target="_blank">Colorlib</a>
-                                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            
         </footer>
 
     </div>
@@ -563,6 +557,7 @@
     <script src="plugins/Isotope/fitcolumns.js"></script>
     <script src="js/categories.js"></script>
     <script src="js/function.js"></script>
+    <script src="js/filter_catalog.js"></script>
 </body>
 
 </html>

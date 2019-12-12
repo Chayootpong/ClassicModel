@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -18,9 +18,12 @@
     <link rel="stylesheet" type="text/css" href="styles/side_bar.css">
     <link rel="stylesheet" type="text/css" href="css/popup.css">
     <link rel="stylesheet" type="text/css" href="styles/login_button.css">
+
+    <link rel="icon" href="https://icon-library.net/images/3d-model-icon/3d-model-icon-24.jpg" type="image/x-icon" />   
+
 </head>
 
-<body>
+<body onload="createMBSPTable(); addMBSP();">
     <!-- Login Button -->
     <button class="login_button" onclick="document.getElementById('login_form').style.display='block'">Login</button>
 
@@ -30,18 +33,18 @@
         <form class="login_form_model_content animate" onsubmit="login_check();">
             <div class="login_imgcontainer">
                 <span onclick="document.getElementById('login_form').style.display='none'" class="login_form_close"
-                    title="Cancle">&times;</span>
+                      title="Cancle">&times;</span>
                 <img src="images/avatar.png" alt="Avatar" class="login_avatar">
             </div>
 
             <div class="login_form_container">
                 <label for="uname"><b>Username</b></label>
                 <input class="login_input" type="text" placeholder="Enter Username" id="login_username" name="uname"
-                    required>
+                       required>
 
                 <label for="psw"><b>Password</b></label>
                 <input class="login_input" type="password" placeholder="Enter Password" id="login_userpassword"
-                    name="psw" required>
+                       name="psw" required>
 
                 <button class="summit_button" type="submit">Login</button>
                 <!-- <label>
@@ -66,7 +69,6 @@
 
     <script>
         var db = openDatabase('mydata', '1.0', 'Test DB', 2 * 1024 * 1024);
-
         // Delete 'login' table previously created
         db.transaction(function (tx) {
             tx.executeSql("DROP TABLE login", null,
@@ -84,14 +86,11 @@
         // variables used in encrypting
         var encrypted;
         var decrypted;
-
         db.transaction(function (tx) {
-
             // Accessing 'employees' table for information
             tx.executeSql('SELECT extension, employeeNumber FROM employees',
                 null,
                 function (tx, results) {
-
                     // Creating 'login' table
                     tx.executeSql(
                         "CREATE TABLE IF NOT EXISTS login (password CHAR(255) NOT NULL, employeeNumber int, FOREIGN KEY (employeeNumber) REFERENCES employees (employeeNumber))",
@@ -100,15 +99,12 @@
                         function (transaction, error) {
                             console.log('error on table create: ' + error.message);
                         });
-
                     console.log("length of information accquired from employees table: " + results.rows
                         .length);
-
                     // Create 'login' table using the information
                     var i;
                     for (i = 0; i < results.rows.length; i++) {
                         console.log("inserting number: " + i);
-
                         // Encrypt password (in this case, extension)
                         encrypted = CryptoJS.AES.encrypt(results.rows.item(i).extension,
                             "Secret Passphrase");
@@ -116,7 +112,6 @@
                         console.log("- encrypted phrase: " + results.rows.item(i).extension + " -> " +
                             decrypted);
                         console.log("- employee number: " + results.rows.item(i).employeeNumber);
-
                         // Insert information in to 'login' table
                         tx.executeSql(
                             "INSERT INTO 'login' (password, employeeNumber) VALUES(?, ?)",
@@ -125,24 +120,22 @@
                             function (transaction, error) {
                                 console.log('error on insert ' + emNum + ' info: ' + error.message);
                             });
-
                     }
                     console.log("total inserts: " + i);
                 },
                 function (transaction, error) {
                     console.log('error on accessing employees table:' + error.message);
                 });
-
-                // If 'loginSession' table already exits, redirect to the page
-                tx.executeSql(
-                        "SELECT * FROM loginSession",
-                        null,
-                        function (tx, results) {
-                            window.location = "Searching.html";
-                        },
-                        function (transaction, error) {
-                            console.log('no login session found: ' + error.message);
-                        });
+            // If 'loginSession' table already exits, redirect to the page
+            tx.executeSql(
+                "SELECT * FROM loginSession",
+                null,
+                function (tx, results) {
+                    window.location = "Finding.html";
+                },
+                function (transaction, error) {
+                    console.log('no login session found: ' + error.message);
+                });
         })
     </script>
 
@@ -162,6 +155,7 @@
     <script src="js/categories.js"></script>
     <script src="js/login_button.js"></script>
     <script src="js/login.js"></script>
+    <script src="js/function.js"></script>
 </body>
 
 </html>

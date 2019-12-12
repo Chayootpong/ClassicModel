@@ -1,0 +1,586 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Classic Model Shop</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="aStar Fashion Template Project">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="styles/bootstrap-4.1.3/bootstrap.css">
+    <link href="plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/owl.carousel.css">
+    <link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/owl.theme.default.css">
+    <link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/animate.css">
+    <link rel="stylesheet" type="text/css" href="styles/categories.css">
+    <!-- <link rel="stylesheet" type="text/css" href="styles/categories_responsive.css"> -->
+
+    <link rel="stylesheet" type="text/css" href="styles/search_bar.css">
+    <link rel="stylesheet" type="text/css" href="styles/side_bar.css">
+    <link rel="stylesheet" type="text/css" href="css/popup.css">
+    <link rel="stylesheet" type="text/css" href="css/login_button.css">
+</head>
+
+<body>
+
+    <div class="super_container">
+
+        <!-- Menu -->
+
+        <div class="menu d-flex flex-column align-items-start justify-content-start menu_mm trans_400">
+            <div class="menu_close_container">
+                <div class="menu_close">
+                    <div></div>
+                    <div></div>
+                </div>
+            </div>
+            <div class="menu_top d-flex flex-row align-items-center justify-content-start">
+
+                <!-- Language -->
+                <div class="info_languages has_children">
+                    <div class="language_flag">
+                        <img src="images/flag_1.svg" alt="https://www.flaticon.com/authors/freepik">
+                    </div>
+                    <div class="dropdown_text">english</div>
+                    <div class="dropdown_arrow"><i class="fa fa-angle-down" aria-hidden="true"></i></div>
+
+                    <!-- Language Dropdown Menu -->
+                    <ul>
+                        <li>
+                            <a href="#">
+                                <div class="language_flag">
+                                    <img src="images/flag_2.svg" alt="https://www.flaticon.com/authors/freepik">
+                                </div>
+                                <div class="dropdown_text">french</div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <div class="language_flag">
+                                    <img src="images/flag_3.svg" alt="https://www.flaticon.com/authors/freepik">
+                                </div>
+                                <div class="dropdown_text">japanese</div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <div class="language_flag">
+                                    <img src="images/flag_4.svg" alt="https://www.flaticon.com/authors/freepik">
+                                </div>
+                                <div class="dropdown_text">russian</div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <div class="language_flag">
+                                    <img src="images/flag_5.svg" alt="https://www.flaticon.com/authors/freepik">
+                                </div>
+                                <div class="dropdown_text">spanish</div>
+                            </a>
+                        </li>
+                    </ul>
+
+                </div>
+
+                <!-- Currency -->
+                <div class="info_currencies has_children">
+                    <div class="dropdown_text">usd</div>
+                    <div class="dropdown_arrow"><i class="fa fa-angle-down" aria-hidden="true"></i></div>
+
+                    <!-- Currencies Dropdown Menu -->
+                    <ul>
+                        <li>
+                            <a href="#">
+                                <div class="dropdown_text">EUR</div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <div class="dropdown_text">YEN</div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <div class="dropdown_text">GBP</div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <div class="dropdown_text">CAD</div>
+                            </a>
+                        </li>
+                    </ul>
+
+                </div>
+
+            </div>
+            <div class="menu_search">
+                <form action="#" class="header_search_form menu_mm">
+                    <input type="search" class="search_input menu_mm" placeholder="Search" required="required">
+                    <button class="header_search_button d-flex flex-column align-items-center justify-content-center menu_mm">
+                        <i class="fa fa-search menu_mm" aria-hidden="true"></i>
+                    </button>
+                </form>
+            </div>
+            <nav class="menu_nav">
+                <ul class="menu_mm">
+                    <li class="menu_mm"><a href="index.html">home</a></li>
+                    <li class="menu_mm"><a href="categories.html">catalog</a></li>
+                    <li class="menu_mm"><a href="customer.html">membership</a></li>
+                    <li class="menu_mm"><a href="#">order status</a></li>
+                    <li class="menu_mm"><a href="blog.html">blog</a></li>
+                    <li class="menu_mm"><a href="contact.html">contact</a></li>
+                </ul>
+            </nav>
+            <div class="menu_extra">
+                <div class="menu_social">
+                    <ul>
+                        <li><a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
+                        <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                        <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                        <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sidebar -->
+
+        <div class="sidebar">
+
+            <!-- Logo -->
+            <div class="sidebar_logo">
+                <a href="#">
+                    <div>Logo</div>
+                </a>
+            </div>
+
+            <!-- Sidebar Navigation -->
+            <!-- <nav class="sidebar_nav">
+                <ul>
+
+                    <li><a href="index.html">home<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
+                    <li><a href="categories.html">catalog<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
+                    <li><a href="customer.html">membership<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
+                    <li><a href="#">order status<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
+                    <li><a href="blog.html">blog<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
+                    <li><a href="#">contact<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
+                </ul>
+            </nav> -->
+
+            <ul class="list-unstyled components">
+                <li class="active">
+                    <a href="#"> <img src="images/fiding.png" alt="" width="30" length="30">&nbsp; &nbsp; Finding </a>
+
+                    <!-- <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Home</a>
+                    <ul class="collapse list-unstyled" id="homeSubmenu">
+                        <li>
+                            <a href="test1.html">Home 1</a>
+                        </li>
+                        <li>
+                            <a href="search_bar.html">Home 2</a>
+                        </li>
+                        <li>
+                            <a href="categories.html">Home 3</a>
+                        </li>
+                    </ul> -->
+                </li>
+
+                <li>
+                    <a href=""> <img src="images/cart.png" alt="" width="30" length="30">&nbsp; &nbsp; Cart</a>
+                </li>
+
+                <li>
+                    <a href=""> <img src="images/payment.png" alt="" width="30" length="30">&nbsp; &nbsp; Payment</a>
+                </li>
+
+                <li>
+                    <a href=""> <img src="images/order status.png" alt="" width="30" length="30">&nbsp; &nbsp; Order Status</a>
+                </li>
+
+                <li>
+                    <a href=""> <img src="images/membership.png" alt="" width="30" length="30">&nbsp; &nbsp; Membership</a>
+                </li>
+
+                <li>
+                    <a href=""> <img src="images/register.png" alt="" width="30" length="30">&nbsp; &nbsp; Register</a>
+                </li>
+
+                <li>
+                    <a href=""> <img src="images/stocking.png" alt="" width="30" length="30">&nbsp; &nbsp; Stocking</a>
+                </li>
+
+                <li>
+                    <a href=""> <img src="images/promotion.png" alt="" width="30" length="30">&nbsp; &nbsp; Promotion</a>
+                </li>
+
+                <li>
+                    <a href=""> <img src="images/management.png" alt="" width="30" length="30">&nbsp; &nbsp; Management</a>
+                </li>
+            </ul>
+
+            <!-- Search -->
+            <!-- <div class="search">
+                <form action="#" class="search_form" id="sidebar_search_form">
+                    <input type="text" class="search_input" placeholder="Search" required="required">
+                    <button class="search_button"><i class="fa fa-search" aria-hidden="true"></i></button>
+                </form>
+            </div> -->
+            <!-- Cart -->
+            <!-- <div class="cart d-flex flex-row align-items-center justify-content-start">
+                <div class="cart_icon">
+                    <a href="cart.html">
+                        <img src="images/bag.png" alt="">
+                        <div class="cart_num">2</div>
+                    </a>
+                </div>
+                <div class="cart_text">bag</div>
+                <div class="cart_price">$39.99 (1)</div>
+            </div> -->
+        </div>
+
+
+
+        <!-- Products -->
+
+        <div class="products">
+
+            <!-- Sorting & Filtering -->
+            <div class="products_bar">
+                <div class="section_container">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col">
+                                <div class="products_bar_content d-flex flex-column flex-xxl-row align-items-start align-items-xxl-center justify-content-start">
+                                    <!-- <div class="product_categories">
+                                        <ul class="d-flex flex-row align-items-start justify-content-start flex-wrap">
+                                            <li class="active"><a href="#">All</a></li>
+                                            <li><a href="#">Hot Products</a></li>
+                                            <li><a href="#">New Products</a></li>
+                                            <li><a href="#">Sale Products</a></li>
+                                        </ul>
+                                    </div> -->
+                                    <div class="products_bar_side ml-xxl-auto d-flex flex-row align-items-center justify-content-start">
+
+                                        <div class="products_dropdown text-right product_dropdown_filter">
+                                            <div class="isotope_filter_text">
+                                                <span id="getFilter">Search by</span><i class="fa fa-caret-down"
+                                                                                        aria-hidden="true"></i>
+                                            </div>
+                                            <ul>
+
+                                                <li class="item_filter_btn">Name</li>
+                                                <li class="item_filter_btn">
+                                                    Code
+                                                </li>
+                                                <li class="item_filter_btn">Category</li>
+                                                <li class="item_filter_btn">Scale</li>
+
+                                            </ul>
+                                        </div>
+
+                                        <!-- <input type="text" id="myInput" onkeyup="myFunction(document.getElementById('getFilter').innerText)" placeholder="Search.." title="Type in a name"> -->
+                                        <div class="cntr">
+                                            <div class="cntr-innr">
+                                                <label class="search" for="inpt_search">
+                                                    <input id="inpt_search" type="text"
+                                                           onkeyup="myFunction(document.getElementById('getFilter').innerText)" />
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <!-- Login Button -->
+                                        <button class="login_button"
+                                            onclick="document.getElementById('login_form').style.display='block'">Login</button>
+
+                                        <!-- Login Form -->
+                                        <div id="login_form" class="login_form_model">
+
+                                            <form class="login_form_model_content animate" action="/action_page.php" method="post">
+                                                <div class="login_imgcontainer">
+                                                    <span onclick="document.getElementById('login_form').style.display='none'"
+                                                        class="login_form_close" title="Cancle">&times;</span>
+                                                    <img src="images/avatar.png" alt="Avatar" class="login_avatar">
+                                                </div>
+
+                                                <div class="login_form_container">
+                                                    <label for="uname"><b>Username</b></label>
+                                                    <input type="text" placeholder="Enter Username" name="uname"
+                                                        required>
+
+                                                    <label for="psw"><b>Password</b></label>
+                                                    <input type="password" placeholder="Enter Password" name="psw"
+                                                        required>
+
+                                                    <button class="summit_button" type="submit">Login</button>
+                                                    <label>
+                                                        <input type="checkbox" checked="checked" name="remember">
+                                                        Remember me
+                                                    </label>
+                                                </div>
+
+                                                <div class="login_form_container" style="background-color:#f1f1f1">
+                                                    <!-- <button type="button"
+                                                        onclick="document.getElementById('login_form').style.display='none'"
+                                                        class="cancelbtn">Cancel</button> -->
+                                                    <span class="psw">Forgot <a href="#">password?</a></span>
+                                                </div>
+                                            </form>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <style>
+                #myTable {
+                    border-collapse: collapse;
+                    width: 100%;
+                    border: 1px solid #ddd;
+                    font-size: 18px;
+                }
+
+                    #myTable th {
+                        padding: 12px;
+                        text-align: center;
+                    }
+
+                    #myTable td {
+                        padding: 12px;
+                    }
+
+                    #myTable tr {
+                        border-bottom: 1px solid #ddd;
+                    }
+
+                        #myTable tr.header,
+                        #myTable tr:hover {
+                            background-color: #f1f1f1;
+                        }
+
+                th {
+                    cursor: pointer;
+                }
+            </style>
+
+            <!--POPUP-->
+
+            <div class="section_container">
+                <div class="container">
+                    <div class="row">
+                        <div class="col">
+                            <div class="products_container grid"></div>
+                            <table id="myTable">
+
+                                <tr>
+                                    <th onclick="sortTable(0)">Name</th>
+                                    <th onclick="sortTable(1)">Code</th>
+                                    <th>Category</th>
+                                    <th>Scale</th>
+                                    <th onclick="sortTableNumber(4)">Amount</th>
+                                    <th>Price</th>
+                                    <th>Cart</th>
+                                </tr>
+
+                                <script>
+                                    var db = openDatabase('mydata', '1.0', 'Test DB', 2 * 1024 * 1024);
+                                    let msg = "";
+                                    const list = document.querySelector('#myTable');
+                                    db.transaction(function (tx) {
+                                        tx.executeSql('SELECT * FROM products', [], function (tx, results) {
+                                            var len = results.rows.length, i;
+                                            for (i = 0; i < len; i++) {
+                                                pname = results.rows.item(i).productName
+                                                pcode = results.rows.item(i).productCode
+                                                pcat = results.rows.item(i).productLine
+                                                pscale = results.rows.item(i).productScale
+                                                num = results.rows.item(i).quantityInStock
+                                                price = results.rows.item(i).buyPrice
+                                                des = results.rows.item(i).productDescription
+                                                list.innerHTML += `
+                                                                                <tr>
+                                                                                    <td align="left"><a href="#popup`+i+`"><img src="images/lambo.jpg" alt="" width="100" length="100"></a> &nbsp; &nbsp;` + pname + `</td>
+                                                                                    <td align="center">` + pcode + `</td>
+                                                                                    <td align="center">` + pcat + `</td>
+                                                                                    <td align="center">` + pscale + `</td>
+                                                                                    <td align="center">` + num + `</td>
+                                                                                    <td align="center">` + "$" + price + `</td>
+                                                                                    <td> <div class="product_button ml-auto mr-auto"><a href="#">Add to Cart<a></div></button></td>
+                                                                                </tr>
+                                                                                <div id="popup`+i+`" class="overlay">
+                                                                                    <div class="popup">
+                                                                                    <h2>Product Info</h2>
+                                                                                        <a class="close" href="#">&times;</a>                                                                                 
+                                                                                            <h2  align="center" style="font-size:150%">` + pname + `</h2>
+                                                                                            <div class="product_image" align="center"><img src="images/lambo.jpg" width="200px" length="200px"><div>
+                                                                                            <div  align="left" style="color:black">`+ "Code: "+` &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ` +pcode + `<div>
+                                                                                            <div  align="left" style="color:black">` + "Category: " + pcat + `<div>
+                                                                                            <div  align="left" style="color:black">` + "Scale: "+`&nbsp;&nbsp;&nbsp;&nbsp; `+pscale + `<div>
+                                                                                            <div  align="left" style="color:black">` + "Detail:" +` <br>`+ `&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`+des + `<div>
+                                                                                            <div  align="left" style="color:black">` + "Price: " +`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; `+ "$" + price + `<div>
+                                                                                            <div class="product_button ml-auto mr-auto"><a href="#">ADD<a></div>
+                                                                                            <div class="product_button ml-auto mr-auto"><a href="#">CANCEL<a></div>
+                                                                                    </div>
+                                                                                </div>`;
+                                            }
+                                        }, null);
+                                    });
+                                </script>
+                            </table>
+
+                            <script>
+
+                                function myFunction(value) {
+                                    console.log(value)
+                                    var input, filter, table, tr, td, i, txtValue, fill
+                                    count = 0;
+                                    if (value == 'Name') fill = 0;
+                                    else if (value.substring(0, value.length - 1) == 'Code') fill = 1;
+                                    else if (value == 'Category') fill = 2;
+                                    else if (value == 'Scale') fill = 3;
+
+                                    console.log(fill)
+                                    input = document.getElementById("inpt_search");
+                                    filter = input.value.toUpperCase();
+                                    table = document.getElementById("myTable");
+                                    tr = table.getElementsByTagName("tr");
+                                    for (i = 0; i < tr.length; i++) {
+                                        td = tr[i].getElementsByTagName("td")[fill];
+                                        if (td) {
+                                            txtValue = td.textContent || td.innerText;
+                                            if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                                                tr[i].style.display = "";
+                                                count++;
+                                            } else {
+                                                tr[i].style.display = "none";
+                                            }
+                                        }
+                                    }
+                                    console.log(count);
+                                }
+
+                                function sortTable(n) {
+                                    var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+                                    table = document.getElementById("myTable");
+                                    switching = true;
+                                    //Set the sorting direction to ascending:
+                                    dir = "asc";
+                                    /*Make a loop that will continue until
+                                    no switching has been done:*/
+                                    while (switching) {
+                                        //start by saying: no switching is done:
+                                        switching = false;
+                                        rows = table.rows;
+                                        /*Loop through all table rows (except the
+                                        first, which contains table headers):*/
+                                        for (i = 1; i < (rows.length - 1); i++) {
+                                            //start by saying there should be no switching:
+                                            shouldSwitch = false;
+                                            /*Get the two elements you want to compare,
+                                            one from current row and one from the next:*/
+                                            x = rows[i].getElementsByTagName("TD")[n];
+                                            y = rows[i + 1].getElementsByTagName("TD")[n];
+                                            /*check if the two rows should switch place,
+                                            based on the direction, asc or desc:*/
+                                            if (dir == "asc") {
+                                                if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+                                                    //if so, mark as a switch and break the loop:
+                                                    shouldSwitch = true;
+                                                    break;
+                                                }
+                                            } else if (dir == "desc") {
+                                                if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+                                                    //if so, mark as a switch and break the loop:
+                                                    shouldSwitch = true;
+                                                    break;
+                                                }
+                                            }
+                                        }
+                                        if (shouldSwitch) {
+                                            /*If a switch has been marked, make the switch
+                                            and mark that a switch has been done:*/
+                                            rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+                                            switching = true;
+                                            //Each time a switch is done, increase this count by 1:
+                                            switchcount++;
+                                        } else {
+                                            /*If no switching has been done AND the direction is "asc",
+                                            set the direction to "desc" and run the while loop again.*/
+                                            if (switchcount == 0 && dir == "asc") {
+                                                dir = "desc";
+                                                switching = true;
+                                            }
+                                        }
+                                    }
+                                }
+
+                                function sortTableNumber(n) {
+                                    var table, rows, switching, i, x, y, shouldSwitch;
+                                    table = document.getElementById("myTable");
+                                    switching = true;
+                                    /*Make a loop that will continue until
+                                    no switching has been done:*/
+                                    while (switching) {
+                                        //start by saying: no switching is done:
+                                        switching = false;
+                                        rows = table.rows;
+                                        /*Loop through all table rows (except the
+                                        first, which contains table headers):*/
+                                        for (i = 1; i < (rows.length - 1); i++) {
+                                            //start by saying there should be no switching:
+                                            shouldSwitch = false;
+                                            /*Get the two elements you want to compare,
+                                            one from current row and one from the next:*/
+                                            x = rows[i].getElementsByTagName("TD")[n];
+                                            y = rows[i + 1].getElementsByTagName("TD")[n];
+                                            //check if the two rows should switch place:
+                                            if (Number(x.innerHTML) > Number(y.innerHTML)) {
+                                                //if so, mark as a switch and break the loop:
+                                                shouldSwitch = true;
+                                                break;
+                                            }
+                                        }
+                                        if (shouldSwitch) {
+                                            /*If a switch has been marked, make the switch
+                                            and mark that a switch has been done:*/
+                                            rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+                                            switching = true;
+                                        }
+                                    }
+                                }
+
+                            </script>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="eieis"></div>
+
+    </footer>
+
+    </div>
+
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="styles/bootstrap-4.1.3/popper.js"></script>
+    <script src="styles/bootstrap-4.1.3/bootstrap.min.js"></script>
+    <script src="plugins/greensock/TweenMax.min.js"></script>
+    <script src="plugins/greensock/TimelineMax.min.js"></script>
+    <script src="plugins/scrollmagic/ScrollMagic.min.js"></script>
+    <script src="plugins/greensock/animation.gsap.min.js"></script>
+    <script src="plugins/greensock/ScrollToPlugin.min.js"></script>
+    <script src="plugins/OwlCarousel2-2.2.1/owl.carousel.js"></script>
+    <script src="plugins/easing/easing.js"></script>
+    <script src="plugins/parallax-js-master/parallax.min.js"></script>
+    <script src="plugins/Isotope/isotope.pkgd.min.js"></script>
+    <script src="plugins/Isotope/fitcolumns.js"></script>
+    <script src="js/categories.js"></script>
+    <script src="js/function.js"></script>
+    <script src="js/search_bar.js"></script>
+    <script src="js/login_button.js"></script>
+</body>
+
+</html>
