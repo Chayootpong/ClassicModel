@@ -1,0 +1,18 @@
+.update_b {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 5% 15%;
+    text-align: center;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.update_b:hover , .update_b:focus {
+    background-color: green;
+}
+
+.column11 {
+    width: 200px;
+}
+

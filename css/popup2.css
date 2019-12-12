@@ -57,16 +57,18 @@ h1 {
     }
 
 .popup {
-    margin-left: 575px;
-    margin-right: auto;
-    margin-top: 125px;
-    margin-bottom: auto;
+    margin-left: 480px;
+    margin-right: 0;
+    margin-top: 100px;
+    margin-bottom: 500px;
     padding: 30px;
     background: #fff;
     border-radius: 5px;
-    width: 50%;
+    width: 61%;
+    height: 80%;
     position: absolute;
     transition: all 5s ease-in-out;
+    overflow-y: auto;
 }
 
     .popup h2 {
@@ -150,7 +152,7 @@ th {
 }
 
 [id^="nameP"], [id^="nameA"] {
-    width: 55%;
+    width: 70%;
     padding: 12px 20px;
     margin: 8px 0;
     display: inline-block;
@@ -161,17 +163,6 @@ th {
 
 [id^="codeP"], [id^="codeA"] {
     width: 25%;
-    padding: 12px 20px;
-    margin-top: 8px;
-    margin-left: 20px;
-    display: inline-block;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-}
-
-[id^="lotP"], [id^="lotA"] {
-    width: 10%;
     padding: 12px 20px;
     margin-top: 8px;
     margin-left: 20px;
